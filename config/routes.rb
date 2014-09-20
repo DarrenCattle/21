@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'pages#home'
+  get 'pages/faq'
+  get 'pages/contact'
 
   devise_for :users
   resources :challenges
