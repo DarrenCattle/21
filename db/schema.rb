@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140920203452) do
+ActiveRecord::Schema.define(version: 20140920215741) do
 
   create_table "challenges", force: true do |t|
     t.integer  "days"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140920203452) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "users", force: true do |t|

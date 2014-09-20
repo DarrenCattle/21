@@ -2,9 +2,33 @@
 
 	<!-- add new challenge -->
 	<p>Add new challenge</p>
+	<%= form_for @challenge do |f| %>
+	  	<div class="form-group">
+	    	<%= f.label :name %>
+	    	<%= f.text_field :name, class: "form-control" %>
+	    </div>
+	  	<div class="form-group">
+	    	<%= f.label :question %>
+	    	<%= f.text_field :question, class: "form-control" %>
+	    </div>
+	  	<div class="form-group">
+	    	<%= f.label :reason %>
+	    	<%= f.text_field :reason, class: "form-control" %>
+	    </div>
+
+    	<%= f.hidden_field :user_id %>
+	    <%= f.submit "Hello", class: "button button-primary", style: "margin-left: 20px;" %>
+	<% end -%>
 
 <% else %>
 
-	<p>Your current challenge</p>	
+	<p>Current Challenge: <%= @current_challenge.name %></p>
+
+	<ul>
+		<li>Days: <%= @current_challenge.days %></li>
+	</ul>
+
+	<%= link_to "Complete", '#' %>
+	<%= link_to "Fail", '#' %>
 
 <% end %>
