@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  get 'pages/faq'
-  get 'pages/contact'
+  get 'pages/faq', as: :faq
+  get 'pages/home', as: :home
+  get 'pages/contact', as: :contact
 
   devise_for :users
   resources :challenges
