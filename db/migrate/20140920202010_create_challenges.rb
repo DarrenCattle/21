@@ -1,7 +1,7 @@
 class CreateChallenges < ActiveRecord::Migration
   def change
     create_table :challenges do |t|
-      t.integer :days
+      t.integer :day, default: 0
       t.string :question
       t.string :reason
       t.integer :user_id
