@@ -1,0 +1,242 @@
+/* ==========================================================================
+   Junto Studios's custom styles
+   ========================================================================== */
+
+/* OVERALL ASPECT */
+
+body, html { height: 100%; width: 100%; font-size: 16px; }
+
+body {
+    margin-top: 50px;
+  	background-color: #f2f2f2;
+    letter-spacing: -0.02rem;
+    font-weight: 100;
+    font-size: 16px;
+    color: #555;
+    font-family: "Open Sans", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*spacing*/
+
+section {
+    padding: 60px 0px 90px;
+}
+
+.centered {
+    text-align: center !important;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.maxwidth {
+    max-width: 900px;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+
+/* Titles */
+h1 {
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 0.1rem;
+    color: #2a3239;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin: 20px 0px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #2a3239;
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+h2.title {
+    margin-bottom: 50px;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: #2a3239;
+    margin: 0px;
+}
+
+/* Paragraph & Typographic */
+p {
+    font-family: "Open Sans", sans-serif;
+    line-height: normal;
+    font-size: 1.2rem;
+    color: #2a3239;
+}
+
+
+/* Links */
+a {
+    color: #2a3239;
+    word-wrap: break-word;
+
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+
+a:hover,
+a:focus {
+    color: #2a3239;
+    outline: 0;
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+a:before,
+a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0px 0px 60px 0px;
+    padding: 0;
+}
+
+.row {
+    margin: 0px;  
+}
+
+.border {
+    border-top: solid 1px #a0afbb;
+}
+
+/*ELEMENTS: IMAGES*/
+
+.logo {
+    max-height: 100px;
+    margin: 0 auto 40px;
+}
+
+.green-arrow {
+    margin-top: 40px;
+    height: 50px;
+
+}
+
+.white-arrow {
+    margin-top: -15px;
+    margin-left: 10px;
+    height: 50px;
+}
+
+.dark-arrow {
+    height: 50px;
+}
+
+// Animations
+
+.visible {
+    opacity: 1;
+}
+
+// BUTTONS
+
+.button {
+    text-transform: uppercase;
+    border: solid 2px transparent;
+    font-weight: 600;
+    border-radius: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    white-space:nowrap;
+    -webkit-transition: background-color 0.2s ease-in;
+    -moz-transition: background-color 0.2s ease-in;
+    -o-transition: background-color 0.2s ease-in;
+    -ms-transition: background-color 0.2s ease-in;
+    transition: background-color 0.2s ease-in;
+}
+
+.button-primary {
+    background-color: #ff5a5f;
+    color: #fff;
+    padding: 5px 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button-primary:hover {
+    background:#e00007;
+    color:#fff;
+    opacity: 0.9;
+}
+
+.button-white {
+    padding:10px 25px;
+    background-color: rgba(255,255,255,0.5);
+    color: #fff;
+}
+
+.button-white:hover {
+    background-color: rgba(0,0,0,0.35);    
+    color:#fff;
+    opacity: 0.9;
+}
+
+/*END ELEMENTS*/
+
+
+/*START!!!*/
+
+#intro {
+    margin-top: -90px;
+    padding: 190px 0px 210px;
+    // background-image: url(<%= asset_path('bg4.jpg') %>);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: #f2f2f2;
+    color: #fff;
+    text-align: center;
+
+    h1 {
+        font-size: 5rem;
+        color: #fff;
+        margin-bottom: 0px;
+    }
+
+    h2 {
+        color: #fff;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+}
+
+#como-funciona {
+    text-align: center;
+    background-color: #fff;
+
+    h1 {
+        color: #ff5a5f;
+        font-size: 8rem;
+    }
+}
