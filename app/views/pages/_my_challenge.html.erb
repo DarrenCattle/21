@@ -1,1 +1,10 @@
-Hello
+<% if @current_challenge.nil? %>
+
+	<!-- add new challenge -->
+	<p>Add new challenge</p>
+
+<% else %>
+
+	<p>Your current challenge</p>	
+
+<% end %>

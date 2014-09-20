@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   has_many :challenges
 
   def current_challenge
-  	challenges.last
+  	if challenges.last != 21
+  		challenges.last
+  	else
+  		nil
+  	end
   end
 end
