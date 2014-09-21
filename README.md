@@ -6,4 +6,4 @@
 * Your journey completing this challenge (statistics: how many times you failed, when, why)
 * Lessons learned
 
-## Have a section to write lessons learned for current and completed challenges
+### Have a section to write lessons learned for current and completed challenges
