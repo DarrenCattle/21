@@ -52,8 +52,7 @@ class ChallengesController < ApplicationController
 	end
 
 	def update_days
-		@challenge = current_user.challenges.last
-		
+		@challenge = current_user.challenges.last	
 		unless @challenge.entered?
 			@challenge.update_attribute(:day, @challenge.day + 1)
 			@challenge.update_attribute(:entered?, true)
