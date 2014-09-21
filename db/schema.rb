@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140920215741) do
+ActiveRecord::Schema.define(version: 20140921002458) do
 
   create_table "challenges", force: true do |t|
     t.integer  "day",        default: 0
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140920215741) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.boolean  "entered?"
   end
 
   create_table "users", force: true do |t|

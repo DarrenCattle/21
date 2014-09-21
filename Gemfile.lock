@@ -38,11 +38,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    delayed_job (4.0.3)
-      activesupport (>= 3.0, < 4.2)
-    delayed_job_active_record (4.0.2)
-      activerecord (>= 3.0, < 4.2)
-      delayed_job (>= 3.0, < 4.1)
     devise (3.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -155,7 +150,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
-  delayed_job_active_record
   devise
   devise-bootstrap-views
   figaro (= 1.0.0.rc1)

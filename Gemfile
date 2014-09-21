@@ -1,17 +1,29 @@
 source 'https://rubygems.org'
 
+# Email validations
 gem 'validates_email_format_of'
 
+# user registration, authorization and authentication
 gem 'devise'
 gem 'devise-bootstrap-views'
+
+# form styling
 gem 'simple_form'
+
+# fonts
 gem 'font-awesome-sass'
+
+# CMS
 # gem 'casein'
-gem 'delayed_job_active_record'
+
+# Delayed jobs
+# gem 'delayed_job_active_record'
+
+# ENV vars
 gem 'figaro', '1.0.0.rc1'
 
-gem 'jquery-turbolinks'
 
+gem 'jquery-turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2.rc1'
 # Use SCSS for stylesheets

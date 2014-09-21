@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   get 'pages/home', as: :home
   get 'pages/contact', as: :contact
 
+
   devise_for :users
+
   resources :challenges
+  put 'challenges/update_days', as: :update_days
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
