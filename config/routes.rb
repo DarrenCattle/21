@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :challenges
   put 'challenges/update_days', as: :update_days
+  put 'challenges/reset_days', as: :reset_days
+  resources :challenges
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

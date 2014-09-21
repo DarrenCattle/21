@@ -28,7 +28,7 @@
 		<li>Days: <%= @current_challenge.day %></li>
 	</ul>
 
-	<%= link_to "Complete", '#' %>
-	<%= link_to "Fail", '#' %>
+	<%= link_to "Complete", update_days_path, method: :put %>
+	<%= link_to "Fail", reset_days_path, method: :put %>
 
 <% end %>

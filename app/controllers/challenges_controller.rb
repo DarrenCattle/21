@@ -1,5 +1,5 @@
 class ChallengesController < ApplicationController
-	before_action :set_challenge, only: [:show, :edit, :update, :update_days, :destroy]
+	before_action :set_challenge, only: [:show, :edit, :update, :destroy]
 
 	# GET /challenges
 	# GET /challenges.json
@@ -52,10 +52,22 @@ class ChallengesController < ApplicationController
 	end
 
 	def update_days
+		@challenge = current_user.challenges.last
+		
 		unless @challenge.entered?
 			@challenge.update_attribute(:day, @challenge.day + 1)
 			@challenge.update_attribute(:entered?, true)
 		end
+		redirect_to :root
+	end
+
+	def reset_days
+		@challenge = current_user.challenges.last
+		unless @challenge.entered?
+			@challenge.update_attribute(:day, 0)
+			@challenge.update_attribute(:entered?, true)
+		end
+		redirect_to :root
 	end
 
 	# DELETE /challenges/1
