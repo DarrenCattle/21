@@ -63,10 +63,10 @@ class ChallengesController < ApplicationController
 
 	def reset_days
 		@challenge = current_user.challenges.last
-		unless @challenge.entered?
+		# unless @challenge.entered?
 			@challenge.update_attribute(:day, 0)
 			@challenge.update_attribute(:entered?, true)
-		end
+		# end
 		redirect_to :root
 	end
 
