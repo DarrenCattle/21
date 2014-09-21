@@ -5,3 +5,6 @@
 * Lessons learned
 
 ## Have a section to write lessons learned for current and completed challenges
+
+## Undo Button for Completed/Failed Challenge.
+
