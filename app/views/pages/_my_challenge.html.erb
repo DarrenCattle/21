@@ -25,10 +25,9 @@
 	<p>Current Challenge: <%= @current_challenge.name %></p>
 
 	<ul>
-		<li>Days: <%= @current_challenge.day %></li>
+		<li>Days: <span id="day"><%= @current_challenge.day %></span></li>
 	</ul>
-
-	<%= link_to "Complete", update_days_path, method: :put %>
-	<%= link_to "Fail", reset_days_path, method: :put %>
+	<%= link_to "Complete", update_days_path, method: :put, remote: true %>
+	<%= link_to "Fail", reset_days_path, method: :put, remote: true %>
 
 <% end %>

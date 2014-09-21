@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+
   put 'challenges/update_days', as: :update_days
   put 'challenges/reset_days', as: :reset_days
   resources :challenges
