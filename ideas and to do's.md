@@ -8,3 +8,17 @@
 
 ## Undo Button for Completed/Failed Challenge.
 
+## Users able to comments on posts.
+* Sort posts after activity (on comments).
+* Like comments.
+
+#Slackbot likes comments to boost morale.
+
+#Notifications.
+
+
+
+
+TO-DO's
+
+#Ask for authentication in parts where we don't want free access.
