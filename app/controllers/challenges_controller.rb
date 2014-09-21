@@ -52,20 +52,19 @@ class ChallengesController < ApplicationController
 	end
 
 	def update_days
-		@challenge = current_user.challenges.last
-		
-		# unless @challenge.entered?
+		@challenge = current_user.challenges.last	
+		unless @challenge.entered?
 			@challenge.update_attribute(:day, @challenge.day + 1)
 			@challenge.update_attribute(:entered?, true)
-		# end
+		end
 	end
 
 	def reset_days
 		@challenge = current_user.challenges.last
-		# unless @challenge.entered?
+		unless @challenge.entered?
 			@challenge.update_attribute(:day, 0)
 			@challenge.update_attribute(:entered?, true)
-		# end
+		end
 	end
 
 	# DELETE /challenges/1
