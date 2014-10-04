@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   root 'pages#home'
   get 'pages/faq', as: :faq
   get 'pages/home', as: :home
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
 
 
   devise_for :users
+  get 'users/:id' => 'users#show'
 
 
   put 'challenges/update_days', as: :update_days
