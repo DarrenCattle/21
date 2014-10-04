@@ -12,9 +12,12 @@
 * Sort posts after activity (on comments).
 * Like comments.
 
-#Slackbot likes comments to boost morale.
+### Slackbot likes comments to boost morale.
 
-#Notifications.
+### Notifications.
+
+### Badges for people who complete 1, 3, 5, 10 challenges.
+
 
 
 
