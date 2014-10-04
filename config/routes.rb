@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  get 'users/:id' => 'users#show'
+  get 'users/:id' => 'users#show', as: :user
 
 
   put 'challenges/update_days', as: :update_days
