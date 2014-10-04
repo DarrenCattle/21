@@ -22,6 +22,9 @@ gem 'font-awesome-sass'
 # ENV vars
 gem 'figaro', '1.0.0.rc1'
 
+# Activity Feed
+gem 'public_activity'
+
 
 gem 'jquery-turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

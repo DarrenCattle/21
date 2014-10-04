@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :challenges
+  has_many :challenges, dependent: :destroy
 
   def current_challenge
   	if challenges.last != 21

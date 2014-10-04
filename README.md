@@ -24,9 +24,14 @@
 
 ##TO-DO's
 
-#Ask for authentication in parts where we don't want free access.# IDEAS & TODOS
+* Ask for authentication in parts where we don't want free access.
+* Track user creation in activity feed
+
+
+# IDEAS & TODOS
 
 ### When challenge is completed:
+
 * Send congratulations email
 * Share on Facebook
 * Your journey completing this challenge (statistics: how many times you failed, when, why)

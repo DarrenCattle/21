@@ -1,4 +1,6 @@
 class Challenge < ActiveRecord::Base
+	include PublicActivity::Common
+	# tracked except: :update, owner: ->(controller, model) { controller and controller.current_user }
 
 	def self.reset_entered
 		@challenges = self.all

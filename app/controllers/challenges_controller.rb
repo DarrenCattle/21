@@ -28,6 +28,8 @@ class ChallengesController < ApplicationController
 
 		respond_to do |format|
 			if @challenge.save
+				@challenge.create_activity :create, owner: current_user
+
 				format.html { redirect_to root_path, notice: 'Challenge was successfully created.' }
 				format.json { render :show, status: :created, location: @challenge }
 			else
@@ -54,17 +56,20 @@ class ChallengesController < ApplicationController
 	def update_days
 		@challenge = current_user.challenges.last	
 		@challenge.update_attributes(day: @challenge.day + 1, entered?: true) unless @challenge.entered?
+		@challenge.create_activity :update_days, owner: current_user
 	end
 
 	def reset_days
 		@challenge = current_user.challenges.last
 		@challenge.update_attributes(day: 0, entered?: true) unless @challenge.entered?
+		@challenge.create_activity :reset_days, owner: current_user
 	end
 
 	# DELETE /challenges/1
 	# DELETE /challenges/1.json
 	def destroy
 		@challenge.destroy
+		@challenge.create_activity :destroy, owner: current_user
 		respond_to do |format|
 			format.html { redirect_to challenges_url, notice: 'Challenge was successfully destroyed.' }
 			format.json { head :no_content }
