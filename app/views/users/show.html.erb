@@ -1,8 +1,12 @@
-<h1><%= @user.name %></h1>
+<h1>Hello, <%= @user.name %></h1>
 
 <h2>Current Challenge:</h2>
-<p><%= @user.current_challenge.name %></p>
-<p>day: <%= @user.current_challenge.day %></p>
-<p>reason: <%= @user.current_challenge.reason %></p>
+<% if @user.current_challenge == nil %>
+	<p>No current challenge. Go ahead, start one!</p>
+<% else %>
+	<p><%= @user.current_challenge.name %></p>
+	<p>day: <%= @user.current_challenge.day %></p>
+	<p>reason: <%= @user.current_challenge.reason %></p>
+<% end %>
 
 <%= render 'layouts/feed' %>
