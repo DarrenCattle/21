@@ -56,13 +56,13 @@ class ChallengesController < ApplicationController
 
 	def update_days
 		@challenge = current_user.challenges.last	
-		@challenge.update_attributes(day: @challenge.day + 1, entered?: true) #unless @challenge.entered?
+		@challenge.update(day: @challenge.day + 1, entered?: true) #unless @challenge.entered?
 		@challenge.create_activity :update_days, owner: current_user
 	end
 
 	def reset_days
 		@challenge = current_user.challenges.last
-		@challenge.update_attributes(day: 0, entered?: true) #unless @challenge.entered?
+		@challenge.update(day: 0, entered?: true) #unless @challenge.entered?
 		@challenge.create_activity :reset_days, owner: current_user
 	end
 
