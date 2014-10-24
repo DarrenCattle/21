@@ -1,6 +1,6 @@
 <% if @current_challenge.nil? %>
 
-	<section id="add-new-challenge">
+	<section id="add-new-challenge" class="cover">
 		<div class="container">
 			<p>Add new challenge</p>
 			<%= form_for @challenge do |f| %>
@@ -26,7 +26,7 @@
 
 <% else %>
 
-	<section id="current-challenge">
+	<section id="current-challenge" class="cover">
 		<div class="container">
 			<div class="col-md-7">
 				<h2>Current Challenge: <%= @current_challenge.name %></h2>

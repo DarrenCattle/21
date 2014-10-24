@@ -1,17 +1,18 @@
-<div class="container">
+<section id="profile" class="cover">
+	<div class="container">
 
-	<h1>Hello, <%= @user.name %></h1>
+		<h1>Hello, <%= @user.name %></h1>
 
-	<h2>Current Challenge:</h2>
-	<% if @user.current_challenge.blank? %>
-		<p>No current challenge. Go ahead, start one!</p>
-	<% else %>
-		<p><%= @user.current_challenge.name %></p>
-		<p>day: <%= @user.current_challenge.day %></p>
-		<p>reason: <%= @user.current_challenge.reason %></p>
-	<% end %>
+		<h2>Current Challenge:</h2>
+		<% if @user.current_challenge.blank? %>
+			<p>No current challenge. Go ahead, start one!</p>
+		<% else %>
+			<p><%= @user.current_challenge.name %></p>
+			<p>day: <%= @user.current_challenge.day %></p>
+			<p>reason: <%= @user.current_challenge.reason %></p>
+		<% end %>
 
-</div> <!-- end container -->
-
+	</div> <!-- end container -->
+</section>
 
 <%= render 'layouts/feed' %>

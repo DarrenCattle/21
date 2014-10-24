@@ -29,24 +29,6 @@ section {
     text-align: center !important;
 }
 
-.right {
-    text-align: right;
-}
-
-.left {
-    text-align: left;
-}
-
-.maxwidth {
-    max-width: 900px;
-}
-
-.nopadding {
-   padding: 0 !important;
-   margin: 0 !important;
-}
-
-
 /* Titles */
 h1 {
     font-family: "Open Sans", sans-serif;
@@ -238,12 +220,15 @@ a:after {
     }
 }
 
-#current-challenge {
+.cover {
     background-color: #6aa89b;
 
     h1, h2, p {
         color: white;
     }
+}
+
+#current-challenge {
 
     .complete-or-fail {
         text-align: center;
@@ -268,31 +253,22 @@ a:after {
             color: white;
         }
     }
-}
 
-#day {
-    margin: 0px auto;
-    display: block;
-    height: 100px;
-    width: 100px;
-    line-height: 100px;
+    #day {
+        margin: 0px auto;
+        display: block;
+        height: 100px;
+        width: 100px;
+        line-height: 100px;
 
-    -moz-border-radius: 50%;
-    border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
 
-    background-color: white;
-    color: #6aa89b;
-    text-align: center;
-    font-size: 3rem;
-}
-
-
-
-
-.feed-container {
-    background-color: white;
-    padding: 0px;
-    border-radius: 4px;
+        background-color: white;
+        color: #6aa89b;
+        text-align: center;
+        font-size: 3rem;
+    }
 }
 
 .feed {
@@ -303,13 +279,20 @@ a:after {
     h1 {
         text-align: center;
     }
-}
 
-.activity {
-    padding: 15px 25px;
-    border-bottom: 1px solid #eee;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    &:hover {
-        background-color: rgba(0,0,0,0.02);
+    .feed-container {
+        background-color: white;
+        padding: 0px;
+        border-radius: 4px;
+    }
+
+    .activity {
+        padding: 15px 25px;
+        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        &:hover {
+            background-color: rgba(0,0,0,0.02);
+        }
     }
 }
+
