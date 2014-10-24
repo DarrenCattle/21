@@ -25,6 +25,9 @@ gem 'figaro', '1.0.0.rc1'
 # Activity Feed
 gem 'public_activity'
 
+# Gravatar
+gem 'gravtastic'
+
 
 gem 'jquery-turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
