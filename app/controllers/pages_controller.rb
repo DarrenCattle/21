@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def home
+    @no_navbar  = true
+    
   	if user_signed_in?
 
   		@current_challenge = current_user.current_challenge
@@ -15,4 +17,6 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+    
 end

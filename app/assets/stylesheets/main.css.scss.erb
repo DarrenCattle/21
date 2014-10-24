@@ -1,214 +1,74 @@
-/* ==========================================================================
-   Junto Studios's custom styles
-   ========================================================================== */
-
-/* OVERALL ASPECT */
-
-body, html { height: 100%; width: 100%; font-size: 16px; }
-
-body {
-  	background-color: #f2f2f2;
-    letter-spacing: -0.02rem;
-    font-size: 16px;
-    color: #555;
-    font-family: "Proxima Nova", sans-serif;
-
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-}
-
-/*spacing*/
-
-section {
-    padding: 60px 0px;
-}
-
-.centered {
-    text-align: center !important;
-}
-
-.alert {
-    margin-bottom: 0px;
-}
-
-/* Titles */
-h1 {
-    font-family: "Proxima Nova", sans-serif;
-    letter-spacing: 0.1rem;
-    color: #2a3239;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 3rem;
-    margin: 20px 0px;
-}
-
-h2 {
-    font-size: 1.5rem;
-    color: #2a3239;
-    line-height: 2.5rem;
-}
-
-h2.title {
-    margin-bottom: 50px;
-}
-
-h3 {
-    font-weight: 300;
-    font-size: 1.4rem;
-    color: #2a3239;
-    margin: 0px;
-}
-
-/* Paragraph & Typographic */
-p {
-    font-family: "Proxima Nova", sans-serif;
-    line-height: normal;
-    font-size: 1.2rem;
-    color: #2a3239;
-}
-
-
-/* Links */
-a {
-    color: #2a3239;
-    word-wrap: break-word;
-
-    -webkit-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    -o-transition: opacity 0.3s;
-    transition: opacity 0.3s;
-}
-
-a:hover,
-a:focus {
-    color: #2a3239;
-    outline: 0;
-    opacity: 0.7;
-    text-decoration: none;
-}
-
-a:before,
-a:after {
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
-}
-
- hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 0;
-    padding: 0;
-}
-
-.row {
-    margin: 0px;  
-}
-
-.border {
-    border-top: solid 1px #a0afbb;
-}
-
-/*ELEMENTS: IMAGES*/
-
-.logo {
-    max-height: 100px;
-    margin: 0 auto 40px;
-}
-
-.green-arrow {
-    margin-top: 40px;
-    height: 50px;
-
-}
-
-.white-arrow {
-    margin-top: -15px;
-    margin-left: 10px;
-    height: 50px;
-}
-
-.dark-arrow {
-    height: 50px;
-}
-
-// Animations
-
-.visible {
-    opacity: 1;
-}
-
-// BUTTONS
-
-.button {
-    color: #6aa89b;
-    text-transform: uppercase;
-    border: solid 2px #6aa89b;
-    border-radius: 3px;
-    padding-left: 20px;
-    padding-right: 20px;
-    -webkit-transition: background-color 0.2s ease-in;
-    -moz-transition: background-color 0.2s ease-in;
-    -o-transition: background-color 0.2s ease-in;
-    -ms-transition: background-color 0.2s ease-in;
-    transition: background-color 0.2s ease-in;
-    white-space: nowrap;
-}
-
-.button-primary {
-    width:100%;
-    padding:10px;
-    background: transparent;
-}
-
-.button-primary:hover {
-    background:#6aa89b;
-    color:#fff;
-    opacity: 0.9;
-}
-
-.button-white {
-    padding:10px 25px;
-    background-color: rgba(255,255,255,0.5);
-    color: #fff;
-}
-
-.button-white:hover {
-    background-color: rgba(0,0,0,0.35);    
-    color:#fff;
-    opacity: 0.9;
-}
-
-/*END ELEMENTS*/
-
-
-/*START!!!*/
 
 #intro {
-    margin-top: -60px;
-    height: 100%;
+    margin-top: 0px;
+    padding: 0px;
     // background-image: url(<%= asset_path('balloon.jpg') %>);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
-    background-color: #6aa89b;
+    height: 100%;
+    
     color: #fff;
     text-align: center;
 
-    h1 {
-        font-size: 5rem;
-        color: #fff;
-        margin-bottom: 0px;
+    
+    .row { height: 100%; }
+
+    .session-buttons {
+        margin: 20px 0;
+        a {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
     }
 
-    h2 {
-        color: #fff;
-        margin-top: 0px;
-        margin-bottom: 20px;
+    .left {
+        background-color: #6aa89b;
+
+        h1 {
+            margin: 0px;
+            font-size: 5rem;
+            color: #fff;
+        }
+
+        p {
+            color: #fff;
+            margin-top: 0px;
+            margin-bottom: 30px;
+        }
+        
+        .content {
+            text-align: center;
+        }
+        
+        @media(min-width: 768px) {
+            height: 100%;
+            .content{
+                margin-top: -30px;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @media(max-width: 767px) {
+            padding: 50px 0;
+        }
+
+    }
+
+    .right {
+        color: #333;
+        padding: 40px;
+
+        @media(min-width: 768px) {
+            height: 100%;
+            .content{
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
     }
 }
 
