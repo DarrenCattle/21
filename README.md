@@ -18,8 +18,9 @@
 
 ### Badges for people who complete 1, 3, 5, 10 challenges.
 
+### Slack integration.
 
-
+### allow users to add inspirational cover photo for current challenge.
 
 
 ##TO-DO's

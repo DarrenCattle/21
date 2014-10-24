@@ -22,7 +22,7 @@ body {
 /*spacing*/
 
 section {
-    padding: 60px 0px 90px;
+    padding: 60px 0px;
 }
 
 .centered {
@@ -117,7 +117,7 @@ a:after {
     height: 1px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 0px 0px 60px 0px;
+    margin: 0;
     padding: 0;
 }
 
@@ -161,30 +161,28 @@ a:after {
 // BUTTONS
 
 .button {
+    color: #6aa89b;
     text-transform: uppercase;
-    border: solid 2px transparent;
-    font-weight: 600;
+    border: solid 2px #6aa89b;
     border-radius: 3px;
     padding-left: 20px;
     padding-right: 20px;
-    white-space:nowrap;
     -webkit-transition: background-color 0.2s ease-in;
     -moz-transition: background-color 0.2s ease-in;
     -o-transition: background-color 0.2s ease-in;
     -ms-transition: background-color 0.2s ease-in;
     transition: background-color 0.2s ease-in;
+    white-space: nowrap;
 }
 
 .button-primary {
-    background-color: #ff5a5f;
-    color: #fff;
-    padding: 5px 25px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    width:100%;
+    padding:10px;
+    background: transparent;
 }
 
 .button-primary:hover {
-    background:#e00007;
+    background:#6aa89b;
     color:#fff;
     opacity: 0.9;
 }
@@ -237,5 +235,81 @@ a:after {
     h1 {
         color: #ff5a5f;
         font-size: 8rem;
+    }
+}
+
+#current-challenge {
+    background-color: #6aa89b;
+
+    h1, h2, p {
+        color: white;
+    }
+
+    .complete-or-fail {
+        text-align: center;
+        list-style-type: none;
+        padding-left: 0px;
+    }
+
+    .complete-or-fail a {
+        width: 120px;
+        margin-top: 20px;
+        padding: 10px 0;
+        display: inline-block;
+        border: solid 2px;
+        border-radius: 2000px;
+        font-weight: 600;
+        &.complete {
+            background-color: white;
+            color: #6aa89b;
+        }
+        &.fail {
+            border-color: white;
+            color: white;
+        }
+    }
+}
+
+#day {
+    margin: 0px auto;
+    display: block;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    background-color: white;
+    color: #6aa89b;
+    text-align: center;
+    font-size: 3rem;
+}
+
+
+
+
+.feed-container {
+    background-color: white;
+    padding: 0px;
+    border-radius: 4px;
+}
+
+.feed {
+    ul {
+        list-style-type: none;
+        padding-left: 0px;
+    }
+    h1 {
+        text-align: center;
+    }
+}
+
+.activity {
+    padding: 15px 25px;
+    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    &:hover {
+        background-color: rgba(0,0,0,0.02);
     }
 }
