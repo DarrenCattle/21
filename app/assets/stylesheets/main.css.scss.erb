@@ -7,13 +7,11 @@
 body, html { height: 100%; width: 100%; font-size: 16px; }
 
 body {
-    margin-top: 50px;
   	background-color: #f2f2f2;
     letter-spacing: -0.02rem;
-    font-weight: 100;
     font-size: 16px;
     color: #555;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Proxima Nova", sans-serif;
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -29,9 +27,13 @@ section {
     text-align: center !important;
 }
 
+.alert {
+    margin-bottom: 0px;
+}
+
 /* Titles */
 h1 {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Proxima Nova", sans-serif;
     letter-spacing: 0.1rem;
     color: #2a3239;
     font-weight: 800;
@@ -59,7 +61,7 @@ h3 {
 
 /* Paragraph & Typographic */
 p {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Proxima Nova", sans-serif;
     line-height: normal;
     font-size: 1.2rem;
     color: #2a3239;
@@ -187,36 +189,26 @@ a:after {
 /*START!!!*/
 
 #intro {
-    margin-top: -90px;
-    padding: 190px 0px 210px;
-    background-image: url(<%= asset_path('balloon.jpg') %>);
+    margin-top: -60px;
+    height: 100%;
+    // background-image: url(<%= asset_path('balloon.jpg') %>);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: #6aa89b;
+    color: #fff;
     text-align: center;
 
     h1 {
         font-size: 5rem;
-        color: #333;
+        color: #fff;
         margin-bottom: 0px;
     }
 
     h2 {
-        color: #333;
+        color: #fff;
         margin-top: 0px;
         margin-bottom: 20px;
-    }
-}
-
-#como-funciona {
-    text-align: center;
-    background-color: #fff;
-
-    h1 {
-        color: #ff5a5f;
-        font-size: 8rem;
     }
 }
 
