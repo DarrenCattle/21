@@ -1,6 +1,6 @@
 completed their challenge: 
 <% if activity.trackable %>
-  <%= link_to activity.trackable.name, activity.trackable %> today.
+  <%= link_to activity.trackable.name, activity.trackable %> today. Day <%= activity.challenge_day %>
 <% else %>
   which has since been removed
 <% end %>
