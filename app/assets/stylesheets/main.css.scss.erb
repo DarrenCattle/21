@@ -108,7 +108,6 @@
     z-index: 1000;
     position: fixed;
     left: 400px;
-    padding: 20px;
     width: 0;
     height: 100%;
     margin-left: -400px;
@@ -119,10 +118,43 @@
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 
+}
+
+.sidebar-content {
+    padding: 20px;
     text-align: center;
 
-    h2, p {
+    p, a {
         color: white;
+    }
+
+    p.challenge-info-title {
+        margin-top: 15px;
+        margin-bottom: 0px;
+        text-transform: uppercase;
+    }
+
+    p.challenge-info {
+        margin-top: 0px;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+    .sidebar-nav a {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .sidebar-nav {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        margin-left: -117px;
+
+        .created-by-js {
+            margin-top: 10px;
+            display: block;
+        }
     }
 }
 
@@ -133,7 +165,7 @@
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 400px;
+        padding: 0 0 0 400px;
     }
 
     #wrapper.toggled {
@@ -169,28 +201,29 @@
 
 .complete-or-fail a {
     width: 120px;
-    margin-top: 20px;
+    margin: 20px 10px;
     padding: 10px 0;
     display: inline-block;
-    border: solid 2px;
+    border: solid 3px #fff;
     border-radius: 2000px;
-    font-weight: 600;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
     &.complete {
-        background-color: white;
-        color: #00c3d9;
+        background-color: #2fc96c;
+        
     }
     &.fail {
-        border-color: white;
-        color: white;
+        background-color: #ff4c4c;
     }
 }
 
 #day {
-    margin: 0px auto;
+    margin: 40px auto 0;
     display: block;
-    height: 100px;
-    width: 100px;
-    line-height: 100px;
+    height: 140px;
+    width: 140px;
+    line-height: 140px;
 
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -198,7 +231,7 @@
     background-color: white;
     color: #00c3d9;
     text-align: center;
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 .feed {
