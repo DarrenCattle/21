@@ -42,7 +42,7 @@
 				<%= link_to "My Profile", user_path(current_user) %>
 				<%= link_to "Settings", edit_user_registration_path %>
 				<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-				<%= link_to "Created by Junto Studio", "http://www.juntostudio.com", class: "created-by-js" %>
+				<%= link_to raw("Created by Junto Studio") + image_tag("jslogo.png", class: "jslogo"), "http://www.juntostudio.com", class: "created-by-js" %>
 			</div>
 
 		</div> <!-- sidebar content -->
