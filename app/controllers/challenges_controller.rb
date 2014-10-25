@@ -30,9 +30,7 @@ class ChallengesController < ApplicationController
 		respond_to do |format|
 			if @challenge.save
 				@challenge.create_activity :create, owner: current_user, challenge_day: 0
-
-
-				format.html { redirect_to root_path, notice: 'Challenge was successfully created.' }
+				format.html { redirect_to root_path }
 				format.json { render :show, status: :created, location: @challenge }
 			else
 				format.html { render :new }
@@ -58,19 +56,18 @@ class ChallengesController < ApplicationController
 	end
 
 	def update_days
-		@sentences = []
-		update_days_sentences
 		@challenge = current_user.challenges.last	
 		@challenge.update(day: @challenge.day + 1, entered?: true) #unless @challenge.entered?
 		@challenge.create_activity :update_days, owner: current_user, challenge_day: @challenge.day, 
-												 sentence_index: Random.new.rand(0..8)
+												 sentence_index: Random.new.rand(0..7)
 
 	end
 
 	def reset_days
 		@challenge = current_user.challenges.last
 		@challenge.update(day: 0, entered?: true) #unless @challenge.entered?
-		@challenge.create_activity :reset_days, owner: current_user, challenge_day: 0
+		@challenge.create_activity :reset_days, owner: current_user, challenge_day: 0, challenge_day: @challenge.day, 
+												 sentence_index: Random.new.rand(0..6)
 
 	end
 

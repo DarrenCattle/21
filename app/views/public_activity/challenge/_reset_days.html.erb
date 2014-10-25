@@ -1,6 +1,15 @@
-failed to complete their challenge: 
+<% sentences = [ 	"Arrgh! I'm back to day 0.",
+					"So close! Day 0. Let's do this.",
+					"Day 0. Perseverance is a virtue.",
+					"Day 0. When you're failing it means you're challenging yourself.",
+					"Day 1 tomorrow!",
+					"#backtodayzero"
+ 					]  %>
+
+
 <% if activity.trackable %>
-  <%= link_to activity.trackable.name, activity.trackable %> today. Starting again tomorrow!
+  <%= sentences[activity.sentence_index.to_i] %>
 <% else %>
-  which has since been removed
+  [Deleted]
 <% end %>
+
