@@ -58,9 +58,12 @@ class ChallengesController < ApplicationController
 	end
 
 	def update_days
+		@sentences = []
+		update_days_sentences
 		@challenge = current_user.challenges.last	
 		@challenge.update(day: @challenge.day + 1, entered?: true) #unless @challenge.entered?
-		@challenge.create_activity :update_days, owner: current_user, challenge_day: @challenge.day
+		@challenge.create_activity :update_days, owner: current_user, challenge_day: @challenge.day, 
+												 sentence_index: Random.new.rand(0..8)
 
 	end
 
@@ -81,6 +84,10 @@ class ChallengesController < ApplicationController
 			format.html { redirect_to challenges_url, notice: 'Challenge was successfully destroyed.' }
 			format.json { head :no_content }
 		end
+	end
+
+	def update_days_sentences
+		
 	end
 
 	private
