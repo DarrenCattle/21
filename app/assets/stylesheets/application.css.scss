@@ -29,7 +29,7 @@ body {
     letter-spacing: -0.02rem;
     font-size: 16px;
     color: #555;
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "Gibson", sans-serif;
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -51,11 +51,10 @@ section {
 
 /* Titles */
 h1 {
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "Gibson", sans-serif;
     letter-spacing: 0.1rem;
     color: #2a3239;
     font-weight: 800;
-    text-transform: uppercase;
     font-size: 3rem;
     margin: 20px 0px;
 }
@@ -79,7 +78,8 @@ h3 {
 
 /* Paragraph & Typographic */
 p {
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "Gibson", sans-serif;
+    font-weight: normal;
     line-height: normal;
     font-size: 1.2rem;
     color: #2a3239;
@@ -90,16 +90,18 @@ p {
 a {
     color: #2a3239;
     word-wrap: break-word;
+}
 
-    -webkit-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    -o-transition: opacity 0.3s;
-    transition: opacity 0.3s;
+a.white {
+    color: white;
+    text-decoration: underline;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 a:hover,
 a:focus {
-    color: #2a3239;
     outline: 0;
     opacity: 0.7;
     text-decoration: none;
@@ -163,30 +165,34 @@ a:after {
 // BUTTONS
 
 .button {
-    color: #6aa89b;
+    max-width: 150px;
+    color: #00c3d9;
     text-transform: uppercase;
-    border: solid 2px #6aa89b;
-    border-radius: 3px;
-    padding-left: 20px;
-    padding-right: 20px;
+    border: solid 2px #00c3d9;
+    border-radius: 50px;
+    padding: 8px 30px;
     -webkit-transition: background-color 0.2s ease-in;
     -moz-transition: background-color 0.2s ease-in;
     -o-transition: background-color 0.2s ease-in;
     -ms-transition: background-color 0.2s ease-in;
-    transition: background-color 0.2s ease-in;
+    transition: background-color 0.2s ease-out;
+    -webkit-transition : border 0.2s ease-out;
+    -moz-transition : border 0.2s ease-out;
+    -o-transition : border 0.2s ease-out;
+    transition : border 0.2s ease-out;
     white-space: nowrap;
 }
 
 .button-primary {
-    width:100%;
-    padding:10px;
-    background: transparent;
+    background: white;
+    border-color: white;
 }
 
 .button-primary:hover {
-    background:#6aa89b;
-    color:#fff;
-    opacity: 0.9;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.8);
+    color:#00c3d9;
+    opacity: 0.8;
 }
 
 .button-white {

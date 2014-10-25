@@ -17,17 +17,16 @@
     .session-buttons {
         margin: 20px 0;
         a {
-            margin-left: 5px;
-            margin-right: 5px;
+            margin: 10px auto;
+            display: block;
         }
     }
 
     .left {
-        background-color: #6aa89b;
+        background-color: #00c3d9;
 
         h1 {
             margin: 0px;
-            font-size: 5rem;
             color: #fff;
         }
 
@@ -73,54 +72,170 @@
 }
 
 .cover {
-    background-color: #6aa89b;
+    background-color: #00c3d9;
 
     h1, h2, p {
         color: white;
     }
 }
 
-#current-challenge {
 
-    .complete-or-fail {
-        text-align: center;
-        list-style-type: none;
-        padding-left: 0px;
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    &.toggled {
+        padding-left: 400px;
+
+        #sidebar-wrapper {
+            width: 400px;
+        }
+
+        #page-content-wrapper {
+            position: absolute;
+            margin-right: -400px;
+        }
     }
 
-    .complete-or-fail a {
-        width: 120px;
-        margin-top: 20px;
-        padding: 10px 0;
+}
+
+/* Start Sidebar */
+/* Start Sidebar */
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 400px;
+    width: 0;
+    height: 100%;
+    margin-left: -400px;
+    overflow-y: auto;
+    background: #00c3d9;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+}
+
+.sidebar-content {
+    padding: 20px;
+    text-align: center;
+
+    p, a {
+        color: white;
+    }
+
+    p.challenge-info-title {
+        margin-top: 15px;
+        margin-bottom: 0px;
+        text-transform: uppercase;
+    }
+
+    p.challenge-info {
+        margin-top: 0px;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+    .sidebar-nav a {
         display: inline-block;
-        border: solid 2px;
-        border-radius: 2000px;
-        font-weight: 600;
-        &.complete {
-            background-color: white;
-            color: #6aa89b;
-        }
-        &.fail {
-            border-color: white;
-            color: white;
-        }
+        margin: 0 10px;
     }
 
-    #day {
-        margin: 0px auto;
-        display: block;
-        height: 100px;
-        width: 100px;
-        line-height: 100px;
+    .sidebar-nav {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        margin-left: -117px;
 
-        -moz-border-radius: 50%;
-        border-radius: 50%;
+        .created-by-js {
+            margin-top: 10px;
+            display: block;
+        }
 
-        background-color: white;
-        color: #6aa89b;
-        text-align: center;
-        font-size: 3rem;
+        .jslogo {
+            margin: -5px 0 0 5px;
+        }
     }
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding: 15px;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding: 0 0 0 400px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 400px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+/* End Sidebar */
+/* End Sidebar */
+
+.complete-or-fail {
+    text-align: center;
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.complete-or-fail a {
+    width: 120px;
+    margin: 20px 10px;
+    padding: 10px 0;
+    display: inline-block;
+    border: solid 3px #fff;
+    border-radius: 2000px;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+    &.complete {
+        background-color: #2fc96c;
+        
+    }
+    &.fail {
+        background-color: #ff4c4c;
+    }
+}
+
+#day {
+    margin: 40px auto 0;
+    display: block;
+    height: 140px;
+    width: 140px;
+    line-height: 140px;
+
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    background-color: white;
+    color: #00c3d9;
+    text-align: center;
+    font-size: 5rem;
 }
 
 .feed {
@@ -158,5 +273,10 @@
             position: relative;
         }
     }
+}
+
+.panel {
+    margin: 20px auto;
+    max-width: 600px;
 }
 
