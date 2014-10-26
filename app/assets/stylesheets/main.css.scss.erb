@@ -71,6 +71,24 @@
     }
 }
 
+.homepage-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -94px;
+
+    a { color: white; }
+
+    .created-by-js {
+        margin-top: 10px;
+        display: block;
+    }
+
+    .jslogo {
+        margin: -5px 0 0 5px;
+    }    
+}
+
 .cover {
     background-color: #00c3d9;
 
@@ -108,8 +126,6 @@ $sidebar-width: 450px;
 
 }
 
-
-
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
@@ -146,6 +162,16 @@ $sidebar-width: 450px;
         font-weight: 800;
     }
 
+    label {
+        color: white;
+    }
+
+    input {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .sidebar-nav a {
         display: inline-block;
         margin: 0 10px;
@@ -166,24 +192,6 @@ $sidebar-width: 450px;
             margin: -5px 0 0 5px;
         }
     }
-}
-
-.homepage-nav {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    margin-left: -94px;
-
-    a { color: white; }
-
-    .created-by-js {
-        margin-top: 10px;
-        display: block;
-    }
-
-    .jslogo {
-        margin: -5px 0 0 5px;
-    }    
 }
 
 #page-content-wrapper {
@@ -223,8 +231,6 @@ $sidebar-width: 450px;
 
 .complete-or-fail {
     text-align: center;
-    list-style-type: none;
-    padding-left: 0px;
 }
 
 .complete-or-fail a {
@@ -299,6 +305,7 @@ $sidebar-width: 450px;
     }
 }
 
+// to center devise forms
 .panel {
     margin: 20px auto;
     max-width: 600px;
