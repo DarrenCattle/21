@@ -1,7 +1,7 @@
 <section id="profile" class="cover">
 	<div class="container">
 
-		<h1>Hello, <%= @user.name %></h1>
+		<h1><%= image_tag @user.gravatar_url, class: "profile-pic img-circle" %>Hello, <%= @user.name %></h1>
 
 		<h2>Current Challenge:</h2>
 		<% if @user.current_challenge.blank? %>
