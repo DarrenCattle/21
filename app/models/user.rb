@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   include Gravtastic
-  gravtastic
+  gravtastic default: "http://i1287.photobucket.com/albums/a627/alejoriveralara/balloon_purple_zps26f69545.png"
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
