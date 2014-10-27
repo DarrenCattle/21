@@ -15,7 +15,7 @@ class ChallengesController < ApplicationController
 
 	# GET /challenges/new
 	def new
-		@challenge = Challenge.new
+		@challenge = current_user.challenges.build
 	end
 
 	# GET /challenges/1/edit
@@ -25,16 +25,14 @@ class ChallengesController < ApplicationController
 	# POST /challenges
 	# POST /challenges.json
 	def create
-		@challenge = Challenge.new(challenge_params)
+		@challenge = current_user.challenges.build(challenge_params)
 
 		respond_to do |format|
 			if @challenge.save
 				@challenge.create_activity :create, owner: current_user, challenge_day: 0
 				format.html { redirect_to root_path }
-				format.json { render :show, status: :created, location: @challenge }
 			else
 				format.html { render :new }
-				format.json { render json: @challenge.errors, status: :unprocessable_entity }
 			end
 		end
 	end
@@ -46,11 +44,9 @@ class ChallengesController < ApplicationController
 			if @challenge.update(challenge_params)
 				# @challenge.create_activity :update, owner: current_user, challenge_day: @challenge.day
 
-				format.html { redirect_to root_path, notice: 'Challenge was successfully updated.' }
-				format.json { render :show, status: :ok, location: @challenge }
+				format.html { redirect_to root_path }
 			else
 				format.html { render :edit }
-				format.json { render json: @challenge.errors, status: :unprocessable_entity }
 			end
 		end
 	end
@@ -79,7 +75,6 @@ class ChallengesController < ApplicationController
 
 		respond_to do |format|
 			format.html { redirect_to challenges_url, notice: 'Challenge was successfully destroyed.' }
-			format.json { head :no_content }
 		end
 	end
 
@@ -95,6 +90,6 @@ class ChallengesController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def challenge_params
-			params.require(:challenge).permit(:name, :days, :reason, :user_id)
+			params.require(:challenge).permit(:name, :day, :reason, :user_id)
 		end
 end

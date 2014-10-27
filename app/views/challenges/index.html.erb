@@ -13,7 +13,7 @@
   <tbody>
     <% @challenges.each do |challenge| %>
       <tr>
-        <td><%= challenge.days %></td>
+        <td><%= challenge.day %></td>
         <td><%= challenge.reason %></td>
         <td><%= challenge.user_id %></td>
         <td><%= link_to 'Show', challenge %></td>

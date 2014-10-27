@@ -1,1 +1,8 @@
-$("#day").html('<%=escape_javascript @challenge.day.to_s %>');
+<% if @challenge.day < 21 %>
+	$("#day").html('<%= j @challenge.day.to_s %>');
+<% elsif @challenge.day == 21 %>
+	// change to something celebration etc.
+	$("#day").html('<%= j @challenge.day.to_s %>');
+<% else %>
+	$("#sidebar-challenge").html('<%= j render "layouts/new_challenge", challenge: Challenge.new %>');
+<% end %>

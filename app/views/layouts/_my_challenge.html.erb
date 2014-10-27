@@ -1,38 +1,28 @@
 <div id="wrapper">
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-    	<div class="sidebar-content">
-	    	<% if @current_challenge.nil? %>
-		        <p>Start a new challenge</p>
-		        <%= form_for @challenge do |f| %>
-		            <div class="form-group">
-		                <%= f.label :name %>
-		                <%= f.text_field :name, class: "form-control" %>
-		            </div>
-		            <div class="form-group">
-		                <%= f.label :reason %>
-		                <%= f.text_field :reason, class: "form-control" %>
-		            </div>
+	<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+		<div class="sidebar-content">
+			<div id="sidebar-challenge">
+				<% if @current_challenge.nil? %>
 
-		            <%= f.hidden_field :user_id %>
-		            <%= f.submit "Start Now", class: "button button-primary", style: "margin-left: 20px;" %>
-		        <% end %>
+					<%= render 'layouts/new_challenge', challenge: @challenge %>
 
-	        <% else %>
+				<% else %>
 
-		        <span id="day"><%= @current_challenge.day %></span>
-		        <div class="complete-or-fail">
-		            <%= link_to "Done", update_days_path, method: :put, remote: true, class: "button complete" %></li>
-		            <%= link_to "Fail", reset_days_path, method: :put, remote: true, class: "button fail" %></li>
-		        </div>
+					<span id="day"><%= @current_challenge.day %></span>
+					<div class="complete-or-fail">
+						<%= link_to "Done", update_days_path, method: :put, remote: true, class: "button complete" %></li>
+						<%= link_to "Fail", reset_days_path, method: :put, remote: true, class: "button fail" %></li>
+					</div>
 
-		        <p class="challenge-info-title">My Challenge</p>
-		        <p class="challenge-info"><%= @current_challenge.name %></p>
-		        <p class="challenge-info-title">Reason</p>
-		        <p class="challenge-info"><%= @current_challenge.reason %></p>
-	    
-			<% end %>
+					<p class="challenge-info-title">My Challenge</p>
+					<p class="challenge-info"><%= @current_challenge.name %></p>
+					<p class="challenge-info-title">Reason</p>
+					<p class="challenge-info"><%= @current_challenge.reason %></p>
+
+				<% end %>
+			</div>
 
 			<div class="sidebar-nav">
 				<%= link_to "My Profile", user_path(current_user) %>
@@ -42,6 +32,6 @@
 			</div>
 
 		</div> <!-- sidebar content -->
-    </div> <!-- /#sidebar-wrapper -->
+	</div> <!-- /#sidebar-wrapper -->
 
 <!-- the #wrapper has the news feed inside of it as well, the closing div tag is on the feed partial -->
