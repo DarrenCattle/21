@@ -1,7 +1,6 @@
 <p class="challenge-info">Start a New Challenge</p>
     <%= form_for challenge do |f| %>
-
-
+    <%= image_tag "balloon_purple.png", id: "new-challenge-balloon", class: "img-circle" %>
     <p class="challenge-info-title">My Challenge</p>
     <div class="form-group">
         <%= f.text_field :name, class: "form-control" %>
