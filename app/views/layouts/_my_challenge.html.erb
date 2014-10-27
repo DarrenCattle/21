@@ -9,7 +9,7 @@
 					<%= render 'layouts/new_challenge', challenge: @challenge %>
 
 				<% else %>
-
+					
 					<span id="day"><%= @current_challenge.day %></span>
 					<div class="complete-or-fail">
 						<%= link_to "Done", update_days_path, method: :put, remote: true, class: "button complete" %></li>
