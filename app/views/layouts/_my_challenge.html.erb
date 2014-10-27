@@ -23,8 +23,8 @@
 
 		        <span id="day"><%= @current_challenge.day %></span>
 		        <div class="complete-or-fail">
-		            <%= link_to "Done", update_days_path, method: :put, remote: true, class: "complete" %></li>
-		            <%= link_to "Fail", reset_days_path, method: :put, remote: true, class: "fail" %></li>
+		            <%= link_to "Done", update_days_path, method: :put, remote: true, class: "button complete" %></li>
+		            <%= link_to "Fail", reset_days_path, method: :put, remote: true, class: "button fail" %></li>
 		        </div>
 
 		        <p class="challenge-info-title">My Challenge</p>

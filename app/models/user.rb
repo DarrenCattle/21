@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :challenges, dependent: :destroy
 
   def current_challenge
-  	if challenges.last.blank? or challenges.last.day > 21
+  	if challenges.count == 0 or challenges.last.day >= 21
   		nil
   	else
   		challenges.last

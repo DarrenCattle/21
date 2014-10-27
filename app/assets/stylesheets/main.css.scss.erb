@@ -233,7 +233,7 @@ $sidebar-width: 450px;
     text-align: center;
 }
 
-.complete-or-fail a {
+.complete-or-fail .button {
     width: 120px;
     margin: 20px 10px;
     padding: 10px 0;
@@ -243,13 +243,22 @@ $sidebar-width: 450px;
     font-weight: 500;
     color: white;
     text-transform: uppercase;
+
     &.complete {
         background-color: #2fc96c;
-        
+        &:hover {
+            opacity: 1;
+        }   
     }
+    
     &.fail {
         background-color: #ff4c4c;
+        &:hover {
+            opacity: 1;
+        }
     }
+
+
 }
 
 #day {
