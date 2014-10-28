@@ -7,10 +7,6 @@
     box-shadow: 0 1px 4px rgba(0,0,0,0.15);
 }
 
-#menu-toggle {
-    margin: 20px 0;
-}
-
 #intro {
     margin-top: 0px;
     padding: 0px;
@@ -244,8 +240,8 @@ $sidebar-width-xs: 80%;
 }
 
 /* Sidebar width for xs devises */
-
-#wrapper {
+@media(max-width: 767px) {
+    #wrapper {
     &.toggled {
         padding-left: $sidebar-width-xs;
 
@@ -258,12 +254,14 @@ $sidebar-width-xs: 80%;
         }
     }
 
+    }
+
+    #sidebar-wrapper {
+        left: $sidebar-width-xs;
+        margin-left: -$sidebar-width-xs;
+    }
 }
 
-#sidebar-wrapper {
-    left: $sidebar-width-xs;
-    margin-left: -$sidebar-width-xs;
-}
 
 /* End Sidebar */
 /* End Sidebar */
