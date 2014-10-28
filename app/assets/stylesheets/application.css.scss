@@ -208,6 +208,11 @@ a:after {
     opacity: 0.8;
 }
 
+.button-secondary-long {
+    max-width: 100%;
+    white-space: normal;
+}
+
 .button-white {
     padding:10px 30px;
     background-color: rgba(255,255,255,0.5);
