@@ -28,6 +28,8 @@ gem 'public_activity'
 # Gravatar
 gem 'gravtastic'
 
+gem 'will_paginate', '~> 3.0'
+
 
 gem 'jquery-turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
