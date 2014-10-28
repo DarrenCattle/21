@@ -140,7 +140,7 @@ a:after {
 
 .logo {
     max-height: 100px;
-    margin: 0 auto 20px;
+    margin: 20px auto 20px;
 }
 
 .green-arrow {
@@ -206,6 +206,11 @@ a:after {
     border-color: #11d4ea;
     color: white;
     opacity: 0.8;
+}
+
+.button-secondary-long {
+    max-width: 100%;
+    white-space: normal;
 }
 
 .button-white {
