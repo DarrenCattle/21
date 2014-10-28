@@ -9,7 +9,8 @@
 								<div class="content">
 									<%= image_tag activity.owner.gravatar_url, class: "profile-pic img-circle" %>
 									<%= link_to activity.owner.name, user_path(activity.owner) if activity.owner %>
-									<%= render_activity activity %>
+									<%= render_activity activity %> <br>
+									Updated <%= time_ago_in_words(activity.created_at) %> ago.
 								</div>
 							</li>
 						<% end %>
