@@ -56,7 +56,7 @@ class ChallengesController < ApplicationController
 		if Rails.env.development? || !@challenge.entered? 
 			if @challenge.update(day: @challenge.day + 1, entered?: true) 
 				@challenge.create_activity :update_days, owner: current_user, challenge_day: @challenge.day, 
-													 sentence_index: Random.new.rand(0..7)
+													 					message: params[:message]
 			end
 		end												 
 	end
@@ -66,7 +66,7 @@ class ChallengesController < ApplicationController
 		if Rails.env.development? || !@challenge.entered? 
 			if @challenge.update(day: 0, entered?: true)
 				@challenge.create_activity :reset_days, owner: current_user, challenge_day: 0, challenge_day: @challenge.day, 
-													 sentence_index: Random.new.rand(0..6)
+													 					message: params[:message]
 			end
 		end
 	end
@@ -74,12 +74,17 @@ class ChallengesController < ApplicationController
 	# DELETE /challenges/1
 	# DELETE /challenges/1.json
 	def destroy
-		@challenge.destroy
-		@challenge.create_activity :destroy, owner: current_user, challenge_day: @challenge.day
-
-		respond_to do |format|
-			format.html { redirect_to challenges_url, notice: 'Challenge was successfully destroyed.' }
+		if @challenge.destroy
+			@challenge.create_activity :destroy, owner: current_user, challenge_day: @challenge.day, message: params[:message]
+			respond_to do |format|
+				format.html { redirect_to challenges_url, notice: 'Challenge was successfully destroyed.' }
+			end
+		else
+			respond_to do |format|
+				format.html { redirect_to challenges_url, error: 'A problem occurred. Please try again.' }
+			end
 		end
+
 	end
 
 	private

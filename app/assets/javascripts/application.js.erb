@@ -27,3 +27,15 @@ jQuery(function($) {
 	});
 });
 
+jQuery(function($) {
+	$("#button-complete").click(function(e) {
+    	e.preventDefault();
+    	$('#message-complete').removeClass('hidden').fadeIn();
+	});
+
+	$("#button-fail").click(function(e) {
+    	e.preventDefault();
+    	$('#message-fail').removeClass('hidden').fadeIn();
+	});
+});
+
