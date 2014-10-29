@@ -11,14 +11,16 @@
 
 				<span id="day"><%= @current_challenge.day %></span>
 				<div class="complete-or-fail">
-					<%= form_tag update_days_path, method: :put, remote: true do %>
+					<%= link_to "Done", "#", remote: true, class: "button complete", id: "link-complete" %>
+					<%= link_to "Fail", "#", remote: true, class: "button fail", id: "link-fail" %>
+					<!-- this gets added with jQuery: <%= form_tag update_days_path, method: :put, remote: true do %>
 						<%= submit_tag "Done", class: "button complete", id: "button-complete" %>
-						<%= text_field_tag 'message-complete', 'message-complete', class: "hidden" %><br>
-					<% end %>
-					<%= form_tag reset_days_path, method: :put, remote: true do %>
+						<%= text_field_tag 'message-complete', 'message-complete' %><br>
+					<% end %> -->
+					<!-- this gets added with jQuery: <%= form_tag reset_days_path, method: :put, remote: true do %>
 						<%= submit_tag "Fail", class: "button fail", id: "button-fail" %>
-						<%= text_field_tag 'message-fail', 'message-fail', class: "hidden" %><br>
-					<% end %>
+						<%= text_field_tag 'message-fail', 'message-fail' %><br>
+					<% end %> -->
 
 				</div>
 
