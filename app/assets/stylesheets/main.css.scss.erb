@@ -107,7 +107,7 @@
 .profile-pic {
     max-height: 90px;
     margin: -5px 20px 0 0;
-    border: solid 5px white;
+    border: solid 0.25rem white;
 }
 
 
@@ -333,23 +333,42 @@ $sidebar-width-xs: 80%;
     }
 
     .activity {
-        padding: 15px 25px;
         border-bottom: 1px solid #eee;
         border-bottom: 1px solid rgba(0,0,0,0.08);
         &:hover {
             background-color: rgba(0,0,0,0.02);
         }
 
-        .profile-pic {
-            max-height: 60px;
+        .profile-pic-container {
+            width: 5rem;
             float: left;
-            margin: 0 0 0 -80px;
+            display: block;
+            padding: 10px;
+            margin-right: 1rem;
+            border-radius: 4px;
+        }        
+
+        .profile-pic-container img{
+            max-height: 3.5rem;
+            border: solid 0.25rem white;
         }
 
         .content {
-            display: inline-block;
-            margin-left: 80px;
-            position: relative;
+            padding: 15px 0 0 10px;
+            display: block;
+        }
+
+        &.update-days .profile-pic-container {
+            background-color: #2fc96c;
+        }
+        &.reset-days .profile-pic-container {
+            background-color: #ff4c4c;
+        }
+        &.create .profile-pic-container {
+            background-color: #7b0051;
+        }
+        &.destroy .profile-pic-container {
+            background-color: #00c3d9;
         }
     }
 }

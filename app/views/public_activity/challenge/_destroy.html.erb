@@ -1,7 +1,17 @@
 forfeited their challenge: 
 
 <% if activity.trackable %>
-  <%= link_to activity.trackable.name, activity.trackable %>
+  <li class="activity destroy">
+		<div class="row">
+			<div class="profile-pic-container">
+				<%= image_tag activity.owner.gravatar_url, class: "img-circle center-block img-responsive" %>
+			</div>
+			<div class="content">
+				<%= link_to activity.owner.name, user_path(activity.owner) if activity.owner %>
+				Updated <%= time_ago_in_words(activity.created_at) %> ago.
+			</div>
+		</div>
+	</li>
 <% else %>
   which has since been removed
 <% end %>
