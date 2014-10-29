@@ -1,14 +1,3 @@
-<% sentences = [ 	"Day " + activity.challenge_day.to_s + "! #staystrong",
-						raw("Day " + activity.challenge_day.to_s + " of ") + (link_to activity.trackable.name, activity.trackable) + ".",
-						"Day " + activity.challenge_day.to_s + " :) Check!",
-						"Day " + activity.challenge_day.to_s + "! " + (21 - activity.challenge_day.to_i).to_s + " to go.",
-						"Day " + activity.challenge_day.to_s + " :) Building the streak.",
-						"Recordbreaker! Day " + activity.challenge_day.to_s + ".",
-						"Day " + activity.challenge_day.to_s + ". So far so good!",
-						"Day " + activity.challenge_day.to_s + ". I'm almost there! #pro"
- 					]  %>
-
-
 <% if activity.trackable %>
 
 	<li class="activity update-days">
@@ -20,6 +9,7 @@
 				<%= link_to activity.owner.name, user_path(activity.owner) if activity.owner %>
 				<%= sentences[activity.sentence_index.to_i] %>
 				Updated <%= time_ago_in_words(activity.created_at) %> ago.
+				<%= activity.message %>
 			</div>
 		</div>
 	</li>

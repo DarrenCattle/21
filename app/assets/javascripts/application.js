@@ -27,3 +27,15 @@ jQuery(function($) {
 	});
 });
 
+jQuery(function($) {
+	$("#link-complete").click(function(e) {
+    	e.preventDefault();
+    	$(this).replaceWith('<form accept-charset="UTF-8" action="/challenges/update_days" data-remote="true" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div> 						<input class="button complete" id="button-complete" name="commit" type="submit" value="Done"> <input id="message" name="message" type="text" value=""><br> </form>');
+	});
+
+	$("#link-fail").click(function(e) {
+    	e.preventDefault();
+    	$(this).replaceWith('<form accept-charset="UTF-8" action="/challenges/reset_days" data-remote="true" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div> 						<input class="button fail" id="button-fail" name="commit" type="submit" value="Fail"> <input id="message" name="message" type="text" value=""><br> </form>');
+	});
+});
+

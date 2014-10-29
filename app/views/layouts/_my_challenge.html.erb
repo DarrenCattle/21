@@ -1,37 +1,34 @@
-<div id="wrapper">
 
-	<!-- Sidebar -->
-	<div id="sidebar-wrapper">
-		<div class="sidebar-content">
-			<div id="sidebar-challenge">
-				<% if @current_challenge.nil? %>
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+	<div class="sidebar-content">
+		<div id="sidebar-challenge">
+			<% if @current_challenge.nil? %>
 
-					<%= render 'layouts/new_challenge', challenge: @challenge %>
+				<%= render 'layouts/new_challenge', challenge: @challenge %>
 
-				<% else %>
-					
-					<span id="day"><%= @current_challenge.day %></span>
-					<div class="complete-or-fail">
-						<%= link_to "Done", update_days_path, method: :put, remote: true, class: "button complete" %></li>
-						<%= link_to "Fail", reset_days_path, method: :put, remote: true, class: "button fail" %></li>
-					</div>
+			<% else %>
 
-					<p class="challenge-info-title">My Challenge</p>
-					<p class="challenge-info"><%= @current_challenge.name %></p>
-					<p class="challenge-info-title">Reason</p>
-					<p class="challenge-info"><%= @current_challenge.reason %></p>
+				<span id="day"><%= @current_challenge.day %></span>
+				<div class="complete-or-fail">
+					<%= link_to "Done", "#", remote: true, class: "button complete", id: "link-complete" %>
+					<%= link_to "Fail", "#", remote: true, class: "button fail", id: "link-fail" %>
+				</div>
 
-				<% end %>
-			</div>
+				<p class="challenge-info-title">My Challenge</p>
+				<p class="challenge-info"><%= @current_challenge.name %></p>
+				<p class="challenge-info-title">Reason</p>
+				<p class="challenge-info"><%= @current_challenge.reason %></p>
 
-			<div class="sidebar-nav">
-				<%= link_to "My Profile", user_path(current_user) %>
-				<%= link_to "Settings", edit_user_registration_path %>
-				<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-				<%= link_to raw("Created by Junto Studio") + image_tag("jslogo.png", class: "jslogo"), "http://www.juntostudio.com", class: "created-by-js" %>
-			</div>
+			<% end %>
+		</div>
 
-		</div> <!-- sidebar content -->
+		<div class="sidebar-nav">
+			<%= link_to "My Profile", user_path(current_user) %>
+			<%= link_to "Settings", edit_user_registration_path %>
+			<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+			<%= link_to raw("Created by Junto Studio") + image_tag("jslogo.png", class: "jslogo"), "http://www.juntostudio.com", class: "created-by-js" %>
+		</div>
+
+	</div> <!-- sidebar content -->
 	</div> <!-- /#sidebar-wrapper -->
-
-<!-- the #wrapper has the news feed inside of it as well, the closing div tag is on the feed partial -->
