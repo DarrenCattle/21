@@ -53,17 +53,21 @@ class ChallengesController < ApplicationController
 
 	def update_days
 		@challenge = current_user.challenges.last	
-		if @challenge.update(day: @challenge.day + 1, entered?: true) # if Rails.env.development? || !@challenge.entered? 
-			@challenge.create_activity :update_days, owner: current_user, challenge_day: @challenge.day, 
-												 sentence_index: Random.new.rand(0..7)
+		if Rails.env.development? || !@challenge.entered? 
+			if @challenge.update(day: @challenge.day + 1, entered?: true) 
+				@challenge.create_activity :update_days, owner: current_user, challenge_day: @challenge.day, 
+													 sentence_index: Random.new.rand(0..7)
+			end
 		end												 
 	end
 
 	def reset_days
 		@challenge = current_user.challenges.last
-		if @challenge.update(day: 0, entered?: true) # if Rails.env.development? || !@challenge.entered?
-			@challenge.create_activity :reset_days, owner: current_user, challenge_day: 0, challenge_day: @challenge.day, 
-												 sentence_index: Random.new.rand(0..6)
+		if Rails.env.development? || !@challenge.entered? 
+			if @challenge.update(day: 0, entered?: true)
+				@challenge.create_activity :reset_days, owner: current_user, challenge_day: 0, challenge_day: @challenge.day, 
+													 sentence_index: Random.new.rand(0..6)
+			end
 		end
 	end
 
