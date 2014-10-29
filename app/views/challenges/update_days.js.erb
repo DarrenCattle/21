@@ -1,8 +1,6 @@
 <% if @challenge.day < 21 %>
 	$("#day").html('<%= j @challenge.day.to_s %>');
 	// $("#activity-list").prepend('<%= j render @challenge %>');
-	$("#day").html('<%= j debug params %>');
-
 <% elsif @challenge.day == 21 %>
 	// change to something celebration etc.
 	$("#day").html('<%= j @challenge.day.to_s %>');
