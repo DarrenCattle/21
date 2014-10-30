@@ -327,14 +327,16 @@ $sidebar-width-xs: 80%;
     }
 
     .feed-container {
-        background-color: white;
         padding: 0px;
         border-radius: 4px;
     }
 
     .activity {
-        border-bottom: 1px solid #eee;
-        border-bottom: 1px solid rgba(0,0,0,0.08);
+        border: 1px solid #eee;
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: 4px;
+        margin: 10px 0;
+        background-color: white;
         &:hover {
             background-color: rgba(0,0,0,0.02);
         }
@@ -345,7 +347,7 @@ $sidebar-width-xs: 80%;
             display: block;
             padding: 10px;
             margin-right: 0.75rem;
-            border-radius: 4px;
+            border-radius: 4px 0 0 4px;
         }        
 
         .profile-pic-container img{
