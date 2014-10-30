@@ -344,7 +344,7 @@ $sidebar-width-xs: 80%;
             float: left;
             display: block;
             padding: 10px;
-            margin-right: 1rem;
+            margin-right: 0.75rem;
             border-radius: 4px;
         }        
 
@@ -354,10 +354,24 @@ $sidebar-width-xs: 80%;
             border: solid 0.23rem white;
         }
 
+        .day-container {
+            width: 4.5rem;
+            float: left;
+            display: block;
+            background-color: #fdb915;
+            border-radius: 50px;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .day {
+            color: white;
+            text-transform: uppercase;
+        }
+
         .content {
             // padding on the left is the sum of profile-pic-container width plus its margin-right
-            padding: 0.25rem 0 0.25rem 6rem;
-            display: block;
+            padding: 0.25rem 0 0.25rem 11rem;
 
             .name {
                 font-size: 1.1rem;
@@ -379,15 +393,6 @@ $sidebar-width-xs: 80%;
                 font-size: 0.8rem;
             }
 
-            .day {
-                text-align: center;
-                background-color: #fdb915;
-                border-radius: 50px;
-                color: white;
-                text-transform: uppercase;
-                min-width: 5rem;
-                display: inline-block;
-            }
         }
 
         &.update-days .profile-pic-container {
