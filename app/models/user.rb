@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   include Gravtastic
-  gravtastic default: "http://i1287.photobucket.com/albums/a627/alejoriveralara/balloon_purple_zps26f69545.png"
+  gravtastic default: "http://i1287.photobucket.com/albums/a627/alejoriveralara/balloon_purple_zps26f69545.png",
+             size: 75
 
 
   # Include default devise modules. Others available are:
