@@ -1,1 +1,2 @@
 $("#day").html('<%=escape_javascript @challenge.day.to_s %>');
+$('.complete-or-fail').html('<%= j render "layouts/changed_your_mind" %>');

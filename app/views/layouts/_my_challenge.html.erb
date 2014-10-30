@@ -12,7 +12,7 @@
 				<span id="day"><%= @current_challenge.day %></span>
 				<div class="complete-or-fail">
 					<% if @current_challenge.entered? %>
-						<p>You already completed/failed your challenge today. <br> <%= link_to "changed your mind?", reset_entered_path, method: :put %></p>
+						<%= render 'layouts/changed_your_mind' %>
 					<% else %>
 						<%= link_to "Done", "#", remote: true, class: "button complete", id: "link-complete" %>
 						<%= link_to "Fail", "#", remote: true, class: "button fail", id: "link-fail" %>
