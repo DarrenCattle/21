@@ -11,8 +11,12 @@
 
 				<span id="day"><%= @current_challenge.day %></span>
 				<div class="complete-or-fail">
-					<%= link_to "Done", "#", remote: true, class: "button complete", id: "link-complete" %>
-					<%= link_to "Fail", "#", remote: true, class: "button fail", id: "link-fail" %>
+					<% if @current_challenge.entered? %>
+						<%= render 'layouts/changed_your_mind' %>
+					<% else %>
+						<%= link_to "Done", "#", remote: true, class: "button complete", id: "link-complete" %>
+						<%= link_to "Fail", "#", remote: true, class: "button fail", id: "link-fail" %>
+					<% end %>
 				</div>
 
 				<p class="challenge-info-title">My Challenge</p>

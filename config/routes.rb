@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   put 'challenges/update_days', as: :update_days
   put 'challenges/reset_days', as: :reset_days
+  put 'challenges/reset_entered', as: :reset_entered
   resources :challenges
 
   # The priority is based upon order of creation: first created -> highest priority.
