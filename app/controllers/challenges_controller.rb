@@ -71,6 +71,12 @@ class ChallengesController < ApplicationController
 		end
 	end
 
+	def reset_entered
+		@challenge = current_user.challenges.last
+		@challenge.update_attribute(:entered?, false)
+		redirect_to root_path
+	end
+
 	# DELETE /challenges/1
 	# DELETE /challenges/1.json
 	def destroy
