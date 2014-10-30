@@ -107,7 +107,7 @@
 .profile-pic {
     max-height: 90px;
     margin: -5px 20px 0 0;
-    border: solid 0.25rem white;
+    border: solid 0.23rem white;
 }
 
 
@@ -115,7 +115,7 @@
 /* Start Sidebar */
 /* Start Sidebar */
 
-$sidebar-width: 40%;
+$sidebar-width: 33%;
 $sidebar-width-xs: 80%;
 
 #wrapper {
@@ -350,11 +350,12 @@ $sidebar-width-xs: 80%;
 
         .profile-pic-container img{
             max-height: 3.5rem;
-            border: solid 0.25rem white;
+            border: solid 0.23rem white;
         }
 
         .content {
-            padding: 15px 0 0 10px;
+            // padding on the left is the sum of profile-pic-container width plus its margin-right
+            padding: 0.5rem 0 0 6rem;
             display: block;
         }
 
