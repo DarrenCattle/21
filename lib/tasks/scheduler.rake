@@ -8,9 +8,13 @@ end
 desc "Heroku scheduler tasks"
 task :reminder => :environment do
   puts "Sending reminder emails"
-  users = User.where(:entered? => false)
+  users = User.all
+  count = 0
   users.each do |user|
+  	if user.current_challenge && user.current_challenge.entered
       ChallengeMailer.reminder(user).deliver
+      count ++
+    end
   end
-  puts "Reminder Emails (#{auditions.length}) sent successfully!"
+  puts "Reminder Emails (#{count}) sent successfully!"
 end
