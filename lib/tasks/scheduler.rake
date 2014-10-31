@@ -11,9 +11,9 @@ task :reminder => :environment do
   users = User.all
   count = 0
   users.each do |user|
-  	if user.current_challenge && user.current_challenge.entered
+  	if user.current_challenge && user.current_challenge.entered == false
       ChallengeMailer.reminder(user).deliver
-      count ++
+      count = count + 1
     end
   end
   puts "Reminder Emails (#{count}) sent successfully!"

@@ -1,13 +1,47 @@
+<% quotes = ["Character cannot be developed in ease and quiet. Only through experience of trial and suffering can the soul be strengthened, ambition inspired, and success achieved. - Helen Keller", "Character is like a tree and reputation like a shadow. The shadow is what we think of it; the tree is the real thing. - Abraham Lincoln", "Life is a series of experiences, each one of which makes us bigger, even though sometimes it is hard to realize this. For the world was built to develop character, and we must learn that the setbacks and grieves which we endure help us in our marching onward. - Henry Ford", "Weakness of attitude becomes weakness of character. - Albert Einstein", "The function of education is to teach one to think intensively and to think critically. Intelligence plus character - that is the goal of true education. - Martin Luther King Jr.", "People grow through experience if they meet life honestly and courageously. This is how character is built. - Eleanor Roosevelt", "Good character is not formed in a week or a month. It is created little by little, day by day. Protracted and patient effort is needed to develop good character. - Heraclitus", "May the Force be with you"]  %>
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style type="text/css">
+
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #00c3d9;
+            color: white;
+        }
+
+        a { 
+            color: white;
+            text-decoration: underline;
+            font-family: "Open Sans", sans-serif;
+            font-size: 15px;
+        }
+
+        p {
+            color: white;
+            font-size: 15px;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        p.quote {
+        	font-size: 18px;
+        }
+
+    </style>
   </head>
   <body>
 
+  	<p class="quote"><%= quotes.sample %></p>
+
     <p>Hello <%= "#{@user.name}" %>,</p> 
 
-    <p>Reminder</p>
+    <p>Remember to complete your challenge today. Every day, helps build character and momentum.</p>
+    <%= link_to "Click here to go to the website", "http://day21.herokuapp.com/" %>
+
+    <p>The 21 team.</p>
   </body>
 </html>
