@@ -1,6 +1,11 @@
 
 <!-- Sidebar -->
 <div id="sidebar-wrapper">
+		<a class="hamburger-menu hamburger-menu-white visible-xs" href="#menu-toggle2" id="menu-untoggle">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
 	<div class="sidebar-content">
 		<div id="sidebar-challenge">
 			<% if @current_challenge.nil? %>
@@ -8,7 +13,6 @@
 				<%= render 'layouts/new_challenge', challenge: @challenge %>
 
 			<% else %>
-
 				<span id="day"><%= @current_challenge.day %></span>
 				<div class="complete-or-fail">
 					<% if @current_challenge.entered? %>
