@@ -298,7 +298,6 @@ $sidebar-width-xs: 100%;
         }
     }
 
-
 }
 
 #day {
@@ -409,6 +408,22 @@ $sidebar-width-xs: 100%;
         &.destroy .profile-pic-container {
             background-color: black;
         }
+    }
+}
+
+@media(max-width: 767px){
+    .sidebar-content{
+        padding-top: 0px;
+    }
+    #day {
+        margin-top: 0px;
+    }
+    .complete-or-fail .button {
+        width: 100px;
+        margin: 5px 5px 0;
+    }
+    .sidebar-content p.challenge-info {
+        font-size: 1.5rem;
     }
 }
 
