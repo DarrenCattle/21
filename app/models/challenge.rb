@@ -8,7 +8,7 @@ class Challenge < ActiveRecord::Base
 		@challenges = self.all
 
 		@challenges.each do |challenge|
-			challenge.update_attribute(:entered?, false)
+			challenge.update_attribute(:entered, false)
 		end
 	end
 end
