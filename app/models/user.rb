@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 
   has_many :challenges, dependent: :destroy
 
+  scope :reminder_email_ready, -> { where(unsuscribe_from_reminder_email: false) }
+
 
   def current_challenge
     if challenges.count == 0 or challenges.last.day >= 21

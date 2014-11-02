@@ -25,6 +25,11 @@
       <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes') %>)</i>
       <%= f.password_field :current_password, class: "form-control" %>
     </div>
+   <div class="checkbox">
+      <label>
+        <%= f.check_box :unsuscribe_from_reminder_email %>
+        <%= f.label :unsuscribe_from_reminder_email %>
+    </div>
     <%= f.submit t('.update', :default => "Update"), class: "button button-secondary" %></div>
 <% end %>
 </div>
