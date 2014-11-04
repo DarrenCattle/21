@@ -6,6 +6,7 @@ task :set_entered_to_false => :environment do
     if user.current_challenge
       user.current_challenge.update_attribute(:entered, false)
     end
+  end
   puts "Entered attributes reset!"
 end
 
@@ -15,7 +16,7 @@ task :reminder => :environment do
   users = User.reminder_email_ready_america
   count = 0
   users.each do |user|
-	if user.current_challenge && user.current_challenge.entered == false
+	  if user.current_challenge && user.current_challenge.entered == false
       ChallengeMailer.reminder(user).deliver
       count = count + 1
     end
@@ -31,6 +32,7 @@ task :set_entered_to_false_europe => :environment do
     if user.current_challenge
       user.current_challenge.update_attribute(:entered, false)
     end
+  end
   puts "Entered attributes reset!"
 end
 
@@ -40,7 +42,7 @@ task :reminder_europe => :environment do
   users = User.reminder_email_ready_europe
   count = 0
   users.each do |user|
-  if user.current_challenge && user.current_challenge.entered == false
+    if user.current_challenge && user.current_challenge.entered == false
       ChallengeMailer.reminder(user).deliver
       count = count + 1
     end
