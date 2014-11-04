@@ -11,4 +11,21 @@ class Challenge < ActiveRecord::Base
 			challenge.update_attribute(:entered, false)
 		end
 	end
+
+	def self.reset_entered_america
+		@challenges = self.all
+
+		@challenges.each do |challenge|
+			challenge.update_attribute(:entered, false)
+		end
+	end
+
+	def self.reset_entered_europe
+		@challenges = self.all
+
+		@challenges.each do |challenge|
+			challenge.update_attribute(:entered, false)
+		end
+	end
+
 end
