@@ -25,11 +25,14 @@ gem 'figaro', '1.0.0.rc1'
 # Activity Feed
 gem 'public_activity'
 
-# Gravatar
+# Avatars for users
 gem 'gravtastic'
 
+# Pagination
 gem 'will_paginate', '~> 3.0'
 
+# Add comments
+gem 'acts_as_commentable'
 
 gem 'jquery-turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
