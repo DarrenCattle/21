@@ -1,0 +1,61 @@
+<% quotes = ['"Character cannot be developed in ease and quiet. Only through experience of trial and suffering can the soul be strengthened, ambition inspired, and success achieved." - Helen Keller', '"Character is like a tree and reputation like a shadow. The shadow is what we think of it; the tree is the real thing." - Abraham Lincoln', '"Weakness of attitude becomes weakness of character." - Albert Einstein', '"The function of education is to teach one to think intensively and to think critically. Intelligence plus character" - that is the goal of true education." - Martin Luther King Jr.', '"People grow through experience if they meet life honestly and courageously. This is how character is built." - Eleanor Roosevelt', '"Good character is not formed in a week or a month. It is created little by little, day by day. Protracted and patient effort is needed to develop good character." - Heraclitus', '"May the Force be with you" - Yoda']  %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style type="text/css">
+
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            color: black;
+        }
+
+        a, a:visited, a:active { 
+            color: white !important;
+            background-color: #00c3d9;
+            padding: 10px 15px;
+            border-radius: 50px;
+            margin: 10px 0;
+            display: inline-block;
+            text-decoration: none;
+            font-family: "Open Sans", sans-serif;
+            font-size: 15px;
+        }
+
+        a:hover {
+           opacity: 0.8; 
+           color: white !important;
+        }
+
+
+        p {
+            color: black;
+            font-size: 15px;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+    </style>
+  </head>
+  <body>
+      	<h3><%= quotes.sample %></h3>
+
+        <p>Hey <%= "#{@user.name}" %>,</p>
+
+        <% if @user.current_challenge && @user.current_challenge.day > 0 %> 
+            <p>You're already on Day <%= "#{@user.current_challenge.day}" %> of <%= "#{@user.current_challenge.name}" %>. Keep it up!</p>
+        <% end %>
+
+        <p>Remember to complete your challenge today. Consistency helps build character and momentum.</p>
+        <%= link_to "Go to the website", "http://day21.herokuapp.com/" %>
+
+        <p>The 21 team.</p>
+  </body>
+</html>

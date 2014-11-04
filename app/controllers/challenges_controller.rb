@@ -54,7 +54,7 @@ class ChallengesController < ApplicationController
 	def update_days
 		@challenge = current_user.challenges.last	
 		if Rails.env.development? || !@challenge.entered? 
-			if @challenge.update(day: @challenge.day + 1, entered?: true) 
+			if @challenge.update(day: @challenge.day + 1, entered: true) 
 				@challenge.create_activity :update_days, owner: current_user, challenge_day: @challenge.day, 
 													 					message: params[:message]
 			end
@@ -64,7 +64,7 @@ class ChallengesController < ApplicationController
 	def reset_days
 		@challenge = current_user.challenges.last
 		if Rails.env.development? || !@challenge.entered? 
-			if @challenge.update(day: 0, entered?: true)
+			if @challenge.update(day: 0, entered: true)
 				@challenge.create_activity :reset_days, owner: current_user, challenge_day: 0, challenge_day: @challenge.day, 
 													 					message: params[:message]
 			end
@@ -73,7 +73,7 @@ class ChallengesController < ApplicationController
 
 	def reset_entered
 		@challenge = current_user.challenges.last
-		@challenge.update_attribute(:entered?, false)
+		@challenge.update_attribute(:entered, false)
 		# TODO(Max): Undo changing day count
 		redirect_to root_path
 	end
@@ -102,6 +102,6 @@ class ChallengesController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def challenge_params
-			params.require(:challenge).permit(:name, :day, :reason, :user_id)
+			params.require(:challenge).permit(:name, :day, :reason, :user_id, :entered)
 		end
 end

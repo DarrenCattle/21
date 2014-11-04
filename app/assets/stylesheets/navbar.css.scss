@@ -19,3 +19,12 @@
 		width: 30px;
 	}
 }
+
+.hamburger-menu-white {
+	left: 25px;
+	top: 18px;
+	position: relative;
+	.icon-bar {
+		background-color: white;
+	}
+}

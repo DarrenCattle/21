@@ -23,7 +23,11 @@ jQuery(document).ready(function(e){e(".scroll").click(function(t){t.preventDefau
 jQuery(function($) {
 	$("#menu-toggle").click(function(e) {
     	e.preventDefault();
-    	$("#wrapper").toggleClass("toggled");
+    	$("#wrapper").addClass("toggled");
+	});
+	$("#menu-untoggle").click(function(e) {
+    	e.preventDefault();
+    	$("#wrapper").removeClass("toggled");
 	});
 });
 
