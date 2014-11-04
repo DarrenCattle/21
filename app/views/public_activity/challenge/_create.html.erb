@@ -9,7 +9,7 @@
 			</div>
 			<div class="content">
 				<span class="first-line">
-					<%= link_to activity.owner.name, user_path(activity.owner), class: "name" if activity.owner %> started a new challenge. <span class="time-ago"><%= time_ago_in_words(activity.created_at) %> ago.</span>
+					<%= link_to activity.owner.name, user_path(activity.owner), class: "name" if activity.owner %> started a new challenge. <span class="time-ago"><%= time_ago_in_words(activity.created_at) %></span>
 				</span>
 				<%= link_to activity.trackable.name, activity.trackable,  class: "challenge" if activity.owner %><br>
 				
