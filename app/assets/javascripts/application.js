@@ -31,15 +31,19 @@ jQuery(function($) {
 	});
 });
 
+// add message when click DONE
 jQuery(function($) {
 	$("#link-complete").click(function(e) {
     	e.preventDefault();
-    	$(this).replaceWith('<form accept-charset="UTF-8" action="/challenges/update_days" data-remote="true" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div> 						<input class="button complete" id="button-complete" name="commit" type="submit" value="Done"> <input id="message" name="message" type="text" value=""><br> </form>');
+    	$(this).next().remove();
+    	$(this).replaceWith('<form accept-charset="UTF-8" action="/challenges/update_days" data-remote="true" method="post" class="form-inline"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div> <input id="message" name="message" type="text" value="" placeholder="Enter your message here..." class="form-control"> <input class="button button-primary" id="button-complete" name="commit" type="submit" value="Send"><br> </form>');
 	});
 
+// add message when click FAIL
 	$("#link-fail").click(function(e) {
     	e.preventDefault();
-    	$(this).replaceWith('<form accept-charset="UTF-8" action="/challenges/reset_days" data-remote="true" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div> 						<input class="button fail" id="button-fail" name="commit" type="submit" value="Fail"> <input id="message" name="message" type="text" value=""><br> </form>');
+    	$(this).prev().remove();
+    	$(this).replaceWith('<form accept-charset="UTF-8" action="/challenges/reset_days" data-remote="true" method="post" class="form-inline"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div> <input id="message" name="message" type="text" value="" placeholder="Enter your message here..." class="form-control"> <input class="button button-primary" id="button-fail" name="commit" type="submit" value="Send"><br> </form>');
 	});
 });
 
