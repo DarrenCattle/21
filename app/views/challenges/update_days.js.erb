@@ -1,7 +1,7 @@
 <% if @challenge.day < 21 %>
 	$("#day").html('<%= j @challenge.day.to_s %>');
 	$('.complete-or-fail').html('<%= j render "layouts/changed_your_mind" %>');
-	$("#activity-list").prepend('<%= j render_activity PublicActivity::Activity.last %>');
+	$("#activity-list").prepend('<%= j render_activity PublicActivity::Activity.last %>'); // TODO(Max): change this method to return the last activity FOR THE CURRENT USER
 <% elsif @challenge.day == 21 %>
 	// change to something celebration etc.
 	$("#day").html('<%= j @challenge.day.to_s %>');
