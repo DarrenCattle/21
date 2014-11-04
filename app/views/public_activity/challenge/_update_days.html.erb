@@ -16,6 +16,17 @@
 				<%= link_to activity.trackable.name, activity.trackable, class: "challenge" if activity.owner %><br>
 				<span class="message"><%= activity.message %></span>
 			</div>
+			<div class="comments-container">
+				<ul class="comments">
+					<% activity.comments.recent.limit(10).all.each do |comment| %>
+						<li class="comment">
+							<%= comment.comment %>
+							<%= activity.comments.size %>
+
+						</li>
+					<% end %>
+				</ul>
+			</div>
 		</div>
 	</li>
 	
