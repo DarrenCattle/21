@@ -23,6 +23,9 @@ en:
   hello: "Hello world"
   datetime:
     distance_in_words:
+      less_than_x_minutes:
+        one: "now"
+        other: "now"
       x_minutes:
         one: "1m"
         other: "%{count}m"
