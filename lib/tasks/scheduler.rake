@@ -1,7 +1,11 @@
 desc "Heroku scheduler tasks"
 task :set_entered_to_false => :environment do
   puts "Resetting entered? values"
-  Challenge.reset_entered
+  users = User.america_users
+  users.each do |user|
+    if user.current_challenge
+      user.current_challenge.update_attribute(:entered, false)
+    end
   puts "Entered attributes reset!"
 end
 
@@ -22,7 +26,11 @@ end
 desc "Heroku scheduler tasks"
 task :set_entered_to_false_europe => :environment do
   puts "Resetting entered? values"
-  Challenge.reset_entered
+  users = User.europe_users
+  users.each do |user|
+    if user.current_challenge
+      user.current_challenge.update_attribute(:entered, false)
+    end
   puts "Entered attributes reset!"
 end
 
