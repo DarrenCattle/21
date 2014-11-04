@@ -23,7 +23,17 @@ en:
   hello: "Hello world"
   datetime:
     distance_in_words:
+      less_than_x_minutes:
+        one: "now"
+        other: "now"
+      x_minutes:
+        one: "1m"
+        other: "%{count}m"
       about_x_hours:
         # The defaults are "about 1 hour" and "about %{count} hours"
-        one: "1 hour"
-        other: "%{count} hours"
+        one: "1h"
+        other: "%{count}h"
+      x_days:
+        # The defaults are "about 1 hour" and "about %{count} hours"
+        one: "1d"
+        other: "%{count}d"
