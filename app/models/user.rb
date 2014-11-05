@@ -11,7 +11,10 @@ class User < ActiveRecord::Base
 
   has_many :challenges, dependent: :destroy
 
-  scope :reminder_email_ready, -> { where(unsuscribe_from_reminder_email: false) }
+  scope :reminder_email_ready_america, -> { where(unsuscribe_from_reminder_email: false, europe: false) }
+  scope :reminder_email_ready_europe, -> { where(unsuscribe_from_reminder_email: false, europe: true) }
+  scope :europe_users, -> { where(europe: true) }
+  scope :america_users, -> { where(europe: false) }
 
 
   def current_challenge
