@@ -18,13 +18,18 @@
 			</div>
 			<div class="comments-container">
 				<ul class="comments">
-					<% activity.comments.recent.limit(10).all.each do |comment| %>
+					<% activity.comments.each do |comment| %>
 						<li class="comment">
-							<%= comment.comment %>
-							<%= activity.comments.size %>
-
+							<i><%= comment.user.name if comment.user %>:</i> <%= comment.comment %>
 						</li>
 					<% end %>
+					<li class="add-comment">
+						<%= simple_form_for @comment, url: comments_path, method: 'post' do |f| %>
+								<%= f.input :comment, input_html: { class: "form-control" }, label: false %> 
+								<%= f.input :commentable_id, as: :hidden, input_html: { value: activity.id } %> 
+								<%= f.submit "Comment", class: "button button-primary" %> 
+						<% end %>
+					</li>
 				</ul>
 			</div>
 		</div>
