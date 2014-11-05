@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :challenges, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   scope :reminder_email_ready, -> { where(unsuscribe_from_reminder_email: false) }
 
