@@ -4,6 +4,10 @@ task :set_entered_to_false => :environment do
   users = User.america_users
   users.each do |user|
     if user.current_challenge
+      if user.current_challenge.entered == false
+        user.current_challenge.update_attribute(:day, 0)
+        user.current_challenge.create_activity :reset_days, owner: user, challenge_day: 0, message: "Boo!"
+      end
       user.current_challenge.update_attribute(:entered, false)
     end
   end
