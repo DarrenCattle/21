@@ -47,3 +47,37 @@ jQuery(function($) {
 	});
 });
 
+// change font size of challenge and reason depending on length
+jQuery(function($){
+
+    var $name = $(".challenge-info-name"); 
+    var $numWords = $name.text().split(" ").length;
+    
+    if (($numWords >= 1) && ($numWords < 10)) {
+        $name.css("font-size", "2rem");
+    }
+    else if (($numWords >= 10) && ($numWords < 20)) {
+        $name.css("font-size", "1.5rem");
+    }
+    else {
+        $name.css("font-size", "1.25rem");
+    }   
+    
+});
+
+jQuery(function($){
+
+    var $reason = $(".challenge-info-reason"); 
+    var $numWords = $reason.text().split(" ").length;
+    
+    if (($numWords >= 1) && ($numWords < 10)) {
+        $reason.css("font-size", "2rem");
+    }
+    else if (($numWords >= 10) && ($numWords < 20)) {
+        $reason.css("font-size", "1.5rem");
+    }
+    else {
+        $reason.css("font-size", "1.25rem");
+    }    
+    
+});
