@@ -149,6 +149,7 @@ $sidebar-width-xs: 100%;
 }
 
 #sidebar-wrapper {
+    
     z-index: 1000;
     position: fixed;
     left: $sidebar-width;
@@ -167,6 +168,8 @@ $sidebar-width-xs: 100%;
 .sidebar-content {
     padding: 20px;
     text-align: center;
+    height: 100%;
+    display: table;
 
     p, a {
         color: white;
@@ -200,11 +203,10 @@ $sidebar-width-xs: 100%;
     }
 
     .sidebar-nav {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        margin-left: -117px;
-
+        display: table-row;
+        height:1px;
+        text-align: center;
+        
         .created-by-js {
             margin-top: 10px;
             display: block;
