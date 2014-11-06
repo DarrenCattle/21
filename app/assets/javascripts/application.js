@@ -47,3 +47,10 @@ jQuery(function($) {
 	});
 });
 
+
+jQuery(function($) {
+    $(".comment-bubble").click(function(e) {
+        e.preventDefault();
+        $(this).closest(".row").find(".comments-container").slideToggle();
+    });
+});

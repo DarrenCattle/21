@@ -16,8 +16,12 @@
 				<%= link_to activity.trackable.name, activity.trackable, class: "challenge" if activity.owner %><br>
 				<span class="message"><%= activity.message %></span>
 				<div class="activity-footer">
-				<%= render 'layouts/comments_and_likes', activity: activity %>
+					<a href="#" class="comment-bubble icon">Comment</a>
+					<div id="like-form-<%= activity.id %>" class="icon">
+						<%= render 'layouts/like_form', activity: activity %>
+					</div>
 				</div>
+				<%= render 'layouts/comments', activity: activity %>
 			</div>
 		</div>
 	</li>

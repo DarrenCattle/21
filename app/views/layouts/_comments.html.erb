@@ -1,12 +1,16 @@
-<% activity.comments.each do |comment| %>
-	<li class="comment">
-		<i><%= comment.user.name if comment.user %>:</i> <%= comment.comment %>
-	</li>
-<% end %>
-<li class="add-comment">
-	<%= simple_form_for Comment.new, url: comments_path, method: 'post', remote: true do |f| %>
-			<%= f.input :comment, input_html: { class: "form-control" }, label: false %> 
-			<%= f.input :commentable_id, as: :hidden, input_html: { value: activity.id } %> 
-			<%= f.submit "Comment", class: "button button-primary" %> 
-	<% end %>
-</li>
+<div class="comments-container">
+	<ul id="comment-list-<%= activity.id %>" class="comment-list">
+		<% activity.comments.each do |comment| %>
+			<li class="comment">
+				<i><%= comment.user.name if comment.user %>:</i> <%= comment.comment %>
+			</li>
+		<% end %>
+		<li class="add-comment">
+			<%= simple_form_for Comment.new, url: comments_path, method: 'post', remote: true do |f| %>
+					<%= f.input :comment, input_html: { class: "form-control" }, label: false %> 
+					<%= f.input :commentable_id, as: :hidden, input_html: { value: activity.id } %> 
+					<%= f.submit "Comment", class: "button button-primary" %> 
+			<% end %>
+		</li>
+	</ul>
+</div>
