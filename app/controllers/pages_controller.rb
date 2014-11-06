@@ -7,7 +7,6 @@ class PagesController < ApplicationController
   		@challenge = current_user.challenges.build
 
       @activities = Activity.order(created_at: :desc).paginate( page: params[:page], per_page: 15 )
-      @comment = Comment.new
   	end
   end
 

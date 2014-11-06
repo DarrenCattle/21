@@ -16,14 +16,7 @@
 				<%= link_to activity.trackable.name, activity.trackable, class: "challenge" if activity.owner %><br>
 				<span class="message"><%= activity.message %></span>
 			</div>
-			<div class="comments-container">
-				<ul id="comment-list-<%= activity.id %>" class="comment-list">
-					<%= render 'layouts/comments', activity: activity %>
-				</ul>
-			</div>
-			<div id="like-form-<%= activity.id %>">
-				<%= render 'layouts/like_form', activity: activity %>
-			</div>
+			<%= render 'layouts/comments_and_likes', activity: activity %>
 		</div>
 	</li>
 	

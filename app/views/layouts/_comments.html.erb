@@ -4,7 +4,7 @@
 	</li>
 <% end %>
 <li class="add-comment">
-	<%= simple_form_for @comment, url: comments_path, method: 'post', remote: true do |f| %>
+	<%= simple_form_for Comment.new, url: comments_path, method: 'post', remote: true do |f| %>
 			<%= f.input :comment, input_html: { class: "form-control" }, label: false %> 
 			<%= f.input :commentable_id, as: :hidden, input_html: { value: activity.id } %> 
 			<%= f.submit "Comment", class: "button button-primary" %> 
