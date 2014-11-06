@@ -1,5 +1,6 @@
 <% if current_user %>
 	<div id="like_form">
+			<span class="like-counter"><%= likes_for activity %></span>
 		<% if current_user.likes?(activity) %>
 			<%= render 'likes/unlike', activity: activity %>
 		<% else %>
