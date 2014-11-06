@@ -1,0 +1,5 @@
+  <% if current_user.likes?(@activity) %>
+    $("#like-form").html("<%= j render 'posts/unlike' %>");>
+  <% else %>
+    $("#like-form").html("<%= j render 'posts/like' %>");
+  <% end %>

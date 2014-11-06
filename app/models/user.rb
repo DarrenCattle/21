@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :challenges, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes
 
   scope :reminder_email_ready, -> { where(unsuscribe_from_reminder_email: false) }
 
@@ -21,6 +22,18 @@ class User < ActiveRecord::Base
     else
       challenges.last
     end
+  end
+
+  def like!(activity)
+    Like.create!(user_id: self.id, activity_id: activity.id)
+  end
+
+  def unlike!(activity)
+    Like.find_by(user_id: self.id, activity_id: activity.id).destroy!
+  end
+
+  def likes?(activity)
+    Like.exists?(user_id: self.id, activity_id: activity.id)
   end
 
 end

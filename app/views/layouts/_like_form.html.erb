@@ -1,0 +1,9 @@
+<% unless current_user? %>
+	<div id="like_form">
+		<% if current_user.likes?(@activity) %>
+			<%= render 'likes/unlike', activity: @activity %>
+		<% else %>
+			<%= render 'likes/like', activity: @activity %>
+		<% end %>
+	</div>
+<% end %>

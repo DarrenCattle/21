@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :likes, only: [:create, :destroy]
+  
   get 'users/show'
 
   root 'pages#home'
