@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'users/:id' => 'users#show', as: :user
+  get 'everyone' => 'users#index', as: :everyone
 
 
   put 'challenges/update_days', as: :update_days
