@@ -1,10 +1,14 @@
 <% if @challenge.day < 21 %>
+	// update day count
 	$("#day").html('<%= j @challenge.day.to_s %>');
+	// change buttons for 'change your mind'
 	$('.complete-or-fail').html('<%= j render "layouts/changed_your_mind" %>');
+	// Prepend the activity to the feed
 	$("#activity-list").prepend('<%= j render_activity Activity.last %>'); // TODO(Max): change this method to return the last activity FOR THE CURRENT USER
 <% elsif @challenge.day == 21 %>
-	// change to something celebration etc.
+	// TODO(Max): change to something celebration etc.
 	$("#day").html('<%= j @challenge.day.to_s %>');
 <% else %>
+	// Display new challenge form
 	$("#sidebar-challenge").html('<%= j render "layouts/new_challenge", challenge: Challenge.new %>');
 <% end %>
