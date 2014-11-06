@@ -13,8 +13,8 @@
 					<%= link_to activity.owner.name, user_path(activity.owner), class: "name" if activity.owner %> started a new challenge. <span class="time-ago"><%= time_ago_in_words(activity.created_at) %></span>
 				</span>
 				<%= link_to activity.trackable.name, activity.trackable,  class: "challenge" if activity.owner %><br>
+				<%= render 'layouts/comments_and_likes', activity: activity %>
 			</div>
-			<%= render 'layouts/comments_and_likes', activity: activity %>
 		</div>
 	</li>
 
