@@ -21,7 +21,7 @@
 					<%= render 'layouts/comments', activity: activity %>
 				</ul>
 			</div>
-			<div id="like-form">
+			<div id="like-form-<%= activity.id %>">
 				<%= render 'layouts/like_form', activity: activity %>
 			</div>
 		</div>
