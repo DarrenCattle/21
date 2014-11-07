@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :likes, only: [:create, :destroy]
+  
   get 'users/show'
 
   root 'pages#home'
@@ -16,6 +19,8 @@ Rails.application.routes.draw do
   put 'challenges/reset_days', as: :reset_days
   put 'challenges/reset_entered', as: :reset_entered
   resources :challenges
+
+  resources :comments, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

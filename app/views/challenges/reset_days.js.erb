@@ -1,2 +1,6 @@
+// update day count
 $("#day").html('<%=escape_javascript @challenge.day.to_s %>');
+// change buttons for 'change your mind'
 $('.complete-or-fail').html('<%= j render "layouts/changed_your_mind" %>');
+// Prepend the activity to the feed
+$("#activity-list").prepend('<%= j render_activity Activity.last %>'); // TODO(Max): change this method to return the last activity FOR THE CURRENT USER

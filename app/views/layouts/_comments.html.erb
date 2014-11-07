@@ -1,0 +1,12 @@
+<% if activity.comments.count > 0 %>
+	<div class="comments-container">
+		<ul id="comment-list-<%= activity.id %>" class="comment-list">
+			<% activity.comments.each do |comment| %>
+				<li class="comment">
+					<%= image_tag comment.user.gravatar_url, class: "img-circle" %>
+					<span class="comment-name"><%= comment.user.name if comment.user %>:</span> <%= comment.comment %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>

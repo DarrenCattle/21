@@ -8,6 +8,8 @@
 
 User.destroy_all
 PublicActivity::Activity.destroy_all
+Comment.destroy_all
+Like.destroy_all
 
 users = User.create!([{ name: "Test", email: "test@testing.com", password: "123123123", password_confirmation: "123123123" }, { name: "Test 2", email: "testing@testing.com", password: "123123123", password_confirmation: "123123123" }, { name: "Max", email: "max@juntostudio.com", password: "123123123", password_confirmation: "123123123" }])
 
