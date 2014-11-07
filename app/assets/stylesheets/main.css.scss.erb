@@ -391,7 +391,7 @@ $sidebar-width-xs: 100%;
 
         .content {
             // padding on the left is the sum of profile-pic-container width plus its margin-right
-            padding: 0.25rem 0.25rem 0.25rem 11.25rem;
+            padding: 0.25rem 0.75rem 0.25rem 11.25rem;
             color: #888;
 
             .name {
@@ -476,10 +476,44 @@ $sidebar-width-xs: 100%;
     }
 }
 
-.comments-container {
+.add-comment {
     display: none;
 }
 
-.comments-container.show {
-    display: block;
+.activity-footer {
+    .icon {
+        display: inline-block;
+        margin: 0 10px 10px 0;
+    }
+}
+
+.comments-container {
+    margin: 10px 0;
+
+    .comment {
+        padding: 4px 0;
+        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        font-size: 0.9rem;
+
+        .comment-name {
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        &:first-child {
+            border-top: 1px solid #eee;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        img {
+            max-height: 30px;
+            margin-right: 5px;
+        }
+    }
+
+}
+
+.like-counter, .like-button {
+    display: inline-block;
 }
