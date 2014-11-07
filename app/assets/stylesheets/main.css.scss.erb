@@ -473,6 +473,15 @@ $sidebar-width-xs: 100%;
     }
 }
 
+
+.activity-footer {
+    .icon {
+        display: inline-block;
+        margin-right: 10px;
+        float: right;
+    }
+}
+
 .add-comment {
     margin: 5px 0;
     display: none;
@@ -483,16 +492,8 @@ $sidebar-width-xs: 100%;
     }
 }
 
-.activity-footer {
-    .icon {
-        display: inline-block;
-        margin-right: 10px;
-        float: right;
-    }
-}
-
 .comments-container {
-    margin: 10px 0;
+    margin: 0 0 10px 0;
 
     .comment {
         padding: 4px 0;
@@ -515,7 +516,25 @@ $sidebar-width-xs: 100%;
             margin-right: 5px;
         }
     }
+}
 
+.likes-container {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    img {
+            max-height: 30px;
+            margin-right: 5px;
+        }
+
+    .like {
+        padding: 4px 0;
+        display: inline-block;
+    }
 }
 
 .like-counter, .like-button {

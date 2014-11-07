@@ -15,6 +15,7 @@
 				</span>
 				<%= link_to activity.trackable.name, activity.trackable, class: "challenge" if activity.owner %><br>
 				<span class="message"><%= activity.message %></span>
+				<%= render 'layouts/likes', activity: activity %>
 				<%= render 'layouts/comments', activity: activity %>
 				<%= render 'layouts/activity_footer', activity: activity %>
 				<%= render 'layouts/comment_form', activity: activity %>
