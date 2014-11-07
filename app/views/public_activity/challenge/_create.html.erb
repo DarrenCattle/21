@@ -13,13 +13,9 @@
 					<%= link_to activity.owner.name, user_path(activity.owner), class: "name" if activity.owner %> started a new challenge. <span class="time-ago"><%= time_ago_in_words(activity.created_at) %></span>
 				</span>
 				<%= link_to activity.trackable.name, activity.trackable,  class: "challenge" if activity.owner %><br>
+				<%= render 'layouts/likes', activity: activity %>
 				<%= render 'layouts/comments', activity: activity %>
-				<div class="activity-footer">
-					<div id="like-form-<%= activity.id %>" class="icon">
-						<%= render 'layouts/like_form', activity: activity %>
-					</div>
-					<%= link_to (image_tag "comment.png", class: "comment-img"), "#", class: "comment-bubble icon" %>
-				</div>
+				<%= render 'layouts/activity_footer', activity: activity %>
 				<%= render 'layouts/comment_form', activity: activity %>
 			</div>
 		</div>
