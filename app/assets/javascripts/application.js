@@ -54,3 +54,7 @@ jQuery(function($) {
         $(this).closest(".activity").find(".add-comment").slideToggle();
     });
 });
+
+jQuery(function($) {
+    $('.like').tooltip();
+});
