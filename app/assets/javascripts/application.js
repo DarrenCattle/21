@@ -51,6 +51,6 @@ jQuery(function($) {
 jQuery(function($) {
     $(".comment-bubble").click(function(e) {
         e.preventDefault();
-        $(this).closest(".row").find(".add-comment").slideToggle();
+        $(this).closest(".activity").find(".add-comment").slideToggle();
     });
 });

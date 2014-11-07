@@ -1,0 +1,8 @@
+<div class="activity-footer">
+	<div class="row">
+		<div id="like-form-<%= activity.id %>" class="icon">
+			<%= render 'layouts/like_form', activity: activity %>
+		</div>
+		<%= link_to (image_tag "comment.png", class: "comment-img"), "#", class: "comment-bubble icon" %>
+	</div>
+</div>

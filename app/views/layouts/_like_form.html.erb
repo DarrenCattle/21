@@ -1,6 +1,5 @@
 <% if current_user %>
 	<div class="like-button-and-counter">
-		<span class="like-counter"><%= likes_for activity %></span>
 		<div class="like-button">
 			<% if current_user.likes?(activity) %>
 				<%= render 'likes/unlike', activity: activity %>
@@ -8,5 +7,6 @@
 				<%= render 'likes/like', activity: activity %>
 			<% end %>
 		</div>
+		<span class="like-counter"><%= likes_for activity %></span>
 	</div>
 <% end %>
