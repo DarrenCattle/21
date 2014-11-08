@@ -2,7 +2,7 @@
 	<div class="container">
 
 		<h1><%= image_tag @user.gravatar_url, class: "profile-pic img-circle" %>Hello, <%= @user.name %></h1>
-		<%= link_to "change", "http://gravatar.com/emails", target: "_blank" %>
+		<%= link_to "Change Picture", "http://gravatar.com/emails", target: "_blank" %>
 
 		<h2>Current Challenge:</h2>
 		<% if @user.current_challenge.blank? %>
