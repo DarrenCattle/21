@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20141106061417) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "unsuscribe_from_reminder_email", default: false
+    t.boolean  "europe",                         default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
