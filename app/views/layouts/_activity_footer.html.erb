@@ -1,6 +1,8 @@
 <div class="activity-footer">
 	<div class="row">
-		<%= render 'layouts/likes', activity: activity %>
+		<div id="like-container-<%= activity.id %>" class="likes-container">
+			<%= render 'layouts/likes', activity: activity %>
+		</div>
 		<div id="like-form-<%= activity.id %>" class="icon">
 			<%= render 'layouts/like_form', activity: activity %>
 		</div>

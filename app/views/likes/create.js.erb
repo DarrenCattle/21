@@ -1,1 +1,2 @@
+$("#like-container-<%= @activity.id %>").html("<%= j render 'layouts/likes', activity: @activity %>");
 $("#like-form-<%= @activity.id %>").html("<%= j render 'layouts/like_form', activity: @activity %>");
