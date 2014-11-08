@@ -1,6 +1,7 @@
 class ChallengesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_challenge, only: [:show, :edit, :update, :destroy]
+	before_action :verify_access_to_challenge, only: [:edit, :destroy]
 
 	# GET /challenges
 	# GET /challenges.json
@@ -103,5 +104,13 @@ class ChallengesController < ApplicationController
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def challenge_params
 			params.require(:challenge).permit(:name, :day, :reason, :user_id, :entered)
+		end
+
+		def verify_access_to_challenge
+			if current_user != @challenge.user_id
+		      flash[:alert] = "You don't have access to edit that challenge."
+		      redirect_to root_path
+		      return
+	    	end
 		end
 end
