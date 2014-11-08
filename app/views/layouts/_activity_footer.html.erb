@@ -1,5 +1,6 @@
 <div class="activity-footer">
 	<div class="row">
+		<%= render 'layouts/likes', activity: activity %>
 		<div id="like-form-<%= activity.id %>" class="icon">
 			<%= render 'layouts/like_form', activity: activity %>
 		</div>
