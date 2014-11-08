@@ -82,12 +82,11 @@ jQuery(function($){
     
 });
 
-jQuery(function($) {
-    $(".comment-bubble").click(function(e) {
-        e.preventDefault();
-        $(this).closest(".activity").find(".add-comment").slideToggle();
-    });
+$(document).on('click', ".comment-bubble",function(e) {
+    e.preventDefault();
+    $(this).closest(".activity").find(".add-comment").slideToggle();
 });
+
 
 jQuery(function($) {
     $('.like').tooltip();
