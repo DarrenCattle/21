@@ -1,11 +1,9 @@
 <% if current_user %>
-	<div class="like-button-and-counter">
-		<div class="like-button">
-			<% if current_user.likes?(activity) %>
-				<%= render 'likes/unlike', activity: activity %>
-			<% else %>
-				<%= render 'likes/like', activity: activity %>
-			<% end %>
-		</div>
+	<div class="like-button">
+		<% if current_user.likes?(activity) %>
+			<%= render 'likes/unlike', activity: activity %>
+		<% else %>
+			<%= render 'likes/like', activity: activity %>
+		<% end %>
 	</div>
 <% end %>
