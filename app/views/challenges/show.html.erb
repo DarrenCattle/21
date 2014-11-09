@@ -1,18 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Days:</strong>
-  <%= @challenge.day %>
-</p>
-<p>
-  <strong>Reason:</strong>
-  <%= @challenge.reason %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+  	<h4><%= @challenge.name %></h4>
+  </div>
+  <div class="panel-body">
+	<p>
+	  <strong>Day:</strong>
+	  <%= @challenge.day %>
+	</p>
+	<p>
+	  <strong>Reason:</strong>
+	  <%= @challenge.reason %>
+	</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @challenge.user_id %>
-</p>
+	<p>
+	  <strong>Who?</strong>
+	  <%= @challenge.user.name %>
+	</p>
 
-<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
-<%= link_to 'Back', challenges_path %>
+	<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+	<%= link_to 'Back', challenges_path %>
+  </div>
+</div>

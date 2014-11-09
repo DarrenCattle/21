@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :day %><br>
-    <%= f.number_field :day %>
+    <%= f.number_field :day, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :reason %><br>
-    <%= f.text_field :reason %>
+    <%= f.text_field :reason, class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit %>
