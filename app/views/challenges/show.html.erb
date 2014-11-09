@@ -18,8 +18,9 @@
 	  <strong>Who?</strong>
 	  <%= @challenge.user.name %>
 	</p>
-
+	<% if current_user.id == @challenge.user_id %>
 	<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+	<% end %>
 	<%= link_to 'Back', challenges_path %>
   </div>
 </div>
