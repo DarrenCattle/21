@@ -6,7 +6,7 @@ class ChallengesController < ApplicationController
 	# GET /challenges
 	# GET /challenges.json
 	def index
-		@challenges = Challenge.all.where(id: current_user.id)
+		@challenges = current_user.challenges
 	end
 
 	# GET /challenges/1
@@ -107,7 +107,7 @@ class ChallengesController < ApplicationController
 		end
 
 		def verify_access_to_challenge
-			if current_user != @challenge.user_id
+			if current_user.id != @challenge.user_id
 		      flash[:alert] = "You don't have access to edit that challenge."
 		      redirect_to root_path
 		      return
