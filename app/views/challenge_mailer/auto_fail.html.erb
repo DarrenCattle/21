@@ -11,7 +11,7 @@
             color: black;
         }
 
-        a, a:visited, a:active { 
+        .button, .button:visited, .button:active { 
             color: white !important;
             background-color: #00c3d9;
             padding: 10px 15px;
@@ -23,16 +23,20 @@
             font-size: 15px;
         }
 
-        a:hover {
+        .button:hover {
            opacity: 0.8; 
            color: white !important;
         }
 
 
-        p {
+        p, a {
             color: black;
             font-size: 15px;
             font-family: "Open Sans", sans-serif;
+        }
+
+        a {
+            text-decoration: none;
         }
 
         h3 {
@@ -43,17 +47,24 @@
     </style>
   </head>
   <body>
-        <p>Hi <%= "#{@user.name}" %>,</p>
 
-        <p>Everything OK? You didn't log in your challenge yesterday and are now back to day zero.</p>
+        <p>Aww man! It looks like you didn’t complete your challenge yesterday! Did you forget to mark-it off or did the power of complacency get to you? In any case, don’t stress too much about it.  It happens to the best of us.</p>
 
-        <p>This is a great opportunity to stop and think about how your ideal version of yourself would react to failing at something. Then, to put whatever your ideal self would do into practice.</p> 
+        <p>This is actually an amazing opportunity to learn something about yourself. Here are a few questions to help you out.</p>
 
-        <p>Remember, failure can either be a tragedy or an opportunity, depending on our beliefs about life.</p>
+        <ul>
+            <li>What was different about today?</li>
+            <li>What is that voice inside your head saying, is it giving you some excuse that sounds very plausible? If it is, that’s probably fear coming out, trying to keep us from achieving our potential. Listen to what it’s saying, it’s important to understand what’s stopping you.</li>
+            <li>How did you feel throughout the day? Is it harder to keep your word when you feel like you're tired, sick, under pressure, or something else? Take time to explore this. </li>
+            <li>Did you have trouble with planning? Sometimes this can be the biggest barrier. What problems do you see with how you planned to achieve your goal today? What can you do to change it??</li>
+        </ul>
 
-        <p>Go ahead and complete your challenge today. Consistency helps build character and momentum.</p>
-        <%= link_to "Go to the website", "http://day21.herokuapp.com/" %>
+        <p>Finally, we know it sucks to miss a day, especially when you had a great streak going, so here is some  <%= link_to "happy music or a funny video", "https://www.youtube.com/watch?v=UowkIRSDHfs" %> to cheer you up and make sure you don’t miss a beat :wink:</p>
 
-        <p>The 21 team.</p>
+
+        <p>Go ahead and complete your challenge today.</p>
+        <%= link_to "Go to the website", "http://day21.herokuapp.com/", class: "button" %>
+        
+        <p>The 21 team</p>
   </body>
 </html>
