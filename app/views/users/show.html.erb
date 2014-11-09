@@ -1,16 +1,17 @@
 <section id="profile" class="cover">
 	<div class="container">
 
-		<h1><%= image_tag @user.gravatar_url, class: "profile-pic img-circle" %>Hello, <%= @user.name %></h1>
+		<h1><%= image_tag @user.gravatar_url, class: "profile-pic img-circle" %><%= @user.name %></h1>
 		<%= link_to "Change Picture", "http://gravatar.com/emails", target: "_blank" %>
+		
 
-		<h2>Current Challenge:</h2>
+		<p class="challenge-info-title">Current Challenge:</p>
 		<% if @user.current_challenge.blank? %>
 			<p>No current challenge. Go ahead, start one!</p>
 		<% else %>
-			<p><%= @user.current_challenge.name %></p>
-			<p>day: <%= @user.current_challenge.day %></p>
-			<p>reason: <%= @user.current_challenge.reason %></p>
+			<p class="challenge-info challenge-info-name"><%= @user.current_challenge.name %></p>
+			<p class="challenge-info">day: <%= @user.current_challenge.day %></p>
+			<p class="challenge-info challenge-info-reason">reason: <%= @user.current_challenge.reason %></p>
 		<% end %>
 
 	</div> <!-- end container -->
