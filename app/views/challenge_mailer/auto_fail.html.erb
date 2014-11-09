@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style type="text/css">
+
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            color: black;
+        }
+
+        a, a:visited, a:active { 
+            color: white !important;
+            background-color: #00c3d9;
+            padding: 10px 15px;
+            border-radius: 50px;
+            margin: 10px 0;
+            display: inline-block;
+            text-decoration: none;
+            font-family: "Open Sans", sans-serif;
+            font-size: 15px;
+        }
+
+        a:hover {
+           opacity: 0.8; 
+           color: white !important;
+        }
+
+
+        p {
+            color: black;
+            font-size: 15px;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+    </style>
+  </head>
+  <body>
+        <p>Hi <%= "#{@user.name}" %>,</p>
+
+        <p>Everything OK? You didn't log in your challenge yesterday and are now back to day zero.</p>
+
+        <p>This is a great opportunity to stop and think about how your ideal version of yourself would react to failing at something. Then, to put whatever your ideal self would do into practice.</p> 
+
+        <p>Remember, failure can either be a tragedy or an opportunity, depending on our beliefs about life.</p>
+
+        <p>Go ahead and complete your challenge today. Consistency helps build character and momentum.</p>
+        <%= link_to "Go to the website", "http://day21.herokuapp.com/" %>
+
+        <p>The 21 team.</p>
+  </body>
+</html>

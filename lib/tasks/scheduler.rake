@@ -12,6 +12,7 @@ task :set_entered_to_false => :environment do
   users.each do |user|
     if user.current_challenge
       if user.current_challenge.entered == false && user.current_challenge.day > 0
+        ChallengeMailer.auto_fail(user).deliver
         user.current_challenge.update_attribute(:day, 0)
         user.current_challenge.create_activity :reset_days, owner: user, challenge_day: 0, message: sentences.sample
       end
@@ -41,6 +42,11 @@ task :set_entered_to_false_europe => :environment do
   users = User.europe_users
   users.each do |user|
     if user.current_challenge
+      if user.current_challenge.entered == false && user.current_challenge.day > 0
+        ChallengeMailer.auto_fail(user).deliver
+        user.current_challenge.update_attribute(:day, 0)
+        user.current_challenge.create_activity :reset_days, owner: user, challenge_day: 0, message: sentences.sample
+      end
       user.current_challenge.update_attribute(:entered, false)
     end
   end
