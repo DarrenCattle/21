@@ -88,6 +88,13 @@ $(document).on('click', ".comment-bubble",function(e) {
 });
 
 
-jQuery(function($) {
-    $('.like').tooltip();
+//Tooltips (show username above like)
+$(document).on('mouseenter','.like', function(){
+    $(this).tooltip('show');
 });
+
+$(document).on('mouseleave','.like', function(){
+    $(this).tooltip('hide');
+});
+
+    
