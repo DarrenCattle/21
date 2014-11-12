@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106061417) do
+ActiveRecord::Schema.define(version: 20141112000510) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20141106061417) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "challenge_day"
-    t.integer  "sentence_index"
     t.string   "message"
   end
 
