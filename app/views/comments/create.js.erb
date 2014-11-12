@@ -1,4 +1,4 @@
 <% activity = Activity.find_by(id: @comment.commentable_id) %>
 
 $("#comment-list-<%= activity.id %>").html("<%= j render 'layouts/comments', activity: activity %>");
-$("#comment-list-<%= activity.id %>").find('textarea').val('');
+$("#comment-list-<%= activity.id %>").closest('.content').find('input.form-control').val('');
