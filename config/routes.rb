@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   put 'challenges/reset_entered', as: :reset_entered
   resources :challenges
 
-  resources :comments, only: [:create, :destroy]
+  resources :comments, only: [:create, :edit, :update, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

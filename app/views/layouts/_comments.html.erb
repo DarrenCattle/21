@@ -1,9 +1,18 @@
 <div class="comments-container">
 	<ul id="comment-list-<%= activity.id %>" class="comment-list">
 		<% activity.comments.each do |comment| %>
-			<li class="comment">
+			<li class="comment" id="comment-<%= comment.id %>">
 				<%= image_tag comment.user.gravatar_url, class: "img-circle" %>
-				<span class="comment-name"><%= comment.user.name if comment.user %>:</span> <%= comment.comment %>
+				<span class="comment-name"><%= comment.user.name if comment.user %>:</span> <span class="comment-comment"><%= comment.comment %></span>
+				<% if comment.user == current_user %>
+					<span>
+						<%= link_to "edit", edit_comment_path(comment), remote: true, class: "edit" %>
+					</span>
+					<span>
+						<!-- Sorry! This is the link for destroy. nbsp is a space. -->
+							<%= link_to '&nbsp;&nbsp;&nbsp;&nbsp;'.html_safe, comment, method: :delete, class: "image-delete", remote: true, data: { confirm: 'Are you sure?' } %>
+					</span>
+				<% end %>
 			</li>
 		<% end %>
 	</ul>

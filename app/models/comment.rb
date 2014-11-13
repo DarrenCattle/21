@@ -12,4 +12,8 @@ class Comment < ActiveRecord::Base
 
   # NOTE: Comments belong to a user
   belongs_to :user
+
+  def activity
+  	Activity.find(self.commentable_id)
+  end
 end

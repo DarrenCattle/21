@@ -1,0 +1,1 @@
+$("#comment-list-<%= @activity.id %>").find('#comment-<%= @comment.id %>').find('span.comment-comment').replaceWith("<%= j render 'comments/edit', comment: @comment %>");
