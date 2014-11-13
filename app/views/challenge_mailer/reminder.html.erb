@@ -42,6 +42,19 @@
             font-weight: 600;
         }
 
+        span {
+            font-size: 10px;
+            color: #999999;
+        }
+
+        span a {
+            background-color: transparent;
+            color: #333333 !important;
+            font-size: 10px !important;
+            padding: 0px;
+            margin: 0px;
+        }
+
     </style>
   </head>
   <body>
@@ -57,5 +70,7 @@
         <%= link_to "Go to the website", "http://day21.herokuapp.com/" %>
 
         <p>The 21 team.</p>
+
+        <span>To Unsuscribe, visit the <%= link_to "settings page", edit_user_registration_url(host: 'http://21day.herokuapp.com') %> on your profile.</span>
   </body>
 </html>
