@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   end
 
   def like!(activity)
-    Like.create!(user_id: self.id, activity_id: activity.id)
+    Like.find_or_create_by!(user_id: self.id, activity_id: activity.id)
   end
 
   def unlike!(activity)
