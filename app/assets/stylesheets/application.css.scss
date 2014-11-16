@@ -22,6 +22,9 @@
 
 /* OVERALL ASPECT */
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 body, html { height: 100%; width: 100%; font-size: 16px; }
 
 body {
@@ -236,4 +239,5 @@ a:after {
 
 .button-form {
     padding: 3px 10px !important;
+    margin-top: 5px;
 }

@@ -479,6 +479,14 @@ p.challenge-info {
             font-size: 1.8rem;
         }
     }
+
+    .link-end-form {
+        margin-top: 25px;
+
+        a {
+            text-decoration: underline;
+        }
+    }
 }
 
 #everyone {
@@ -533,9 +541,6 @@ p.challenge-info {
     display: none;
     width: 100%;
     text-align: right;
-    .button {
-        margin-top: 5px;    
-    }
 }
 
 .comments-container {
@@ -563,10 +568,17 @@ p.challenge-info {
         }
     }
 
-    .image-delete {
-      background-image: url(https://d3dma7a8zw52bz.cloudfront.net/assets/icons/trash-fb592b3cc743798c8d318f38dfd5cc23.gif); 
-      background-repeat: no-repeat;
-    }
+        .edit-delete a {
+            opacity: 0;
+            color: #888;
+            margin-left: 5px;
+            transition: opacity 0.1s ease-in;
+
+        }
+
+        &:hover .edit-delete a {
+            opacity: 1;
+        }
 }
 
 .like-button {
