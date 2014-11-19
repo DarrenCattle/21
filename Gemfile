@@ -34,6 +34,9 @@ gem 'will_paginate', '~> 3.0'
 # Add comments
 gem 'acts_as_commentable'
 
+# Auto-generate links
+gem 'rails_autolink'
+
 gem 'jquery-turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2.rc1'
