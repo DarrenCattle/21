@@ -37,6 +37,9 @@ gem 'acts_as_commentable'
 # Auto-generate links
 gem 'rails_autolink'
 
+# Add user-friendly URLs
+gem 'friendly_id', '~> 5.0.0'
+
 gem 'jquery-turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2.rc1'
