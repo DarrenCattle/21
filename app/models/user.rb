@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   scope :america_users, -> { where(europe: false) }
 
   validates :username, uniqueness: true,
-                       format: { with: /\A[a-zA-Z0-9]+\Z/, message: "only allows letters and numbers" }
+                       format: { with: /\A[a-z0-9]+\Z/, message: "only allows lowercase letters and numbers" }
 
 
   def current_challenge
