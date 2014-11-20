@@ -13,7 +13,7 @@
 					<span class="time-ago"><%= time_ago_in_words(activity.created_at) %></span>
 				</span>
 				<%= link_to activity.trackable.name, activity.trackable, class: "challenge" if activity.owner %><br>
-				<span class="message"><%= activity.message %></span>
+				<span class="message"><%= auto_link(activity.message) %></span>
 				<%= render 'layouts/comments', activity: activity %>
 				<%= render 'layouts/activity_footer', activity: activity %>
 				<%= render 'layouts/comment_form', activity: activity %>

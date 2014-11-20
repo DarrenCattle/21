@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
+  include FriendlyId
+  friendly_id :username
   include Gravtastic
   gravtastic default: "http://i1287.photobucket.com/albums/a627/alejoriveralara/balloon_purple_zps26f69545.png",
              size: 125
+
+  
 
 
   # Include default devise modules. Others available are:
@@ -17,6 +21,9 @@ class User < ActiveRecord::Base
   scope :reminder_email_ready_europe, -> { where(unsuscribe_from_reminder_email: false, europe: true) }
   scope :europe_users, -> { where(europe: true) }
   scope :america_users, -> { where(europe: false) }
+
+  validates :username, uniqueness: true,
+                       format: { with: /\A[a-z0-9]+\Z/, message: "only allows lowercase letters and numbers" }
 
 
   def current_challenge

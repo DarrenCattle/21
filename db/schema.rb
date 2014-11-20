@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112000510) do
+ActiveRecord::Schema.define(version: 20141119050411) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20141112000510) do
     t.datetime "updated_at"
     t.boolean  "unsuscribe_from_reminder_email", default: false
     t.boolean  "europe",                         default: false
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

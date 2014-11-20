@@ -12,7 +12,7 @@ forfeited their challenge:
 					<span class="time-ago"><%= time_ago_in_words(activity.created_at) %> ago.</span>
 				</span>
 				<%= link_to activity.trackable.name, activity.trackable, class: "challenge" if activity.owner %><br>
-				<span class="message"><%= activity.message %></span>
+				<span class="message"><%= auto_link(activity.message) %></span>
 			</div>
 		</div>
 	</li>
