@@ -45,10 +45,10 @@ class User < ActiveRecord::Base
   end
 
   def profile_pic
-    if self.avatar == nil
-      gravatar_url
-    else
+    if self.avatar.exists?
       avatar.url(:thumb)
+    else
+      gravatar_url
     end
   end
 
