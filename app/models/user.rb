@@ -5,19 +5,14 @@ class User < ActiveRecord::Base
   gravtastic default: "http://i1287.photobucket.com/albums/a627/alejoriveralara/balloon_purple_zps26f69545.png",
              size: 125
 
+  
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
   :default_url => "http://i1287.photobucket.com/albums/a627/alejoriveralara/balloon_purple_zps26f69545.png",
   :url  => ":s3_domain_url",
   :path => "public/avatars/:id/:style_:basename.:extension",
-  :storage => :fog,
-  :fog_credentials => {
-      provider: 'AWS',
-      aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-      aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
-  },
-  fog_directory: ENV["FOG_DIRECTORY"]
+  :storage => :s3,
+  :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
   
-
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   
@@ -55,6 +50,10 @@ class User < ActiveRecord::Base
     else
       avatar.url
     end
+  end
+
+  def s3_credentials
+    {:bucket => ENV['BUCKET'], :access_key_id => ENV['S3_ACCESS'], :secret_access_key => ENV['S3_SECRET']}
   end
 
   def like!(activity)
