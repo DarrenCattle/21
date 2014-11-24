@@ -440,6 +440,18 @@ p.challenge-info {
         &.destroy .profile-pic-container {
             background-color: black;
         }
+
+        &.reached-21 {
+            background-image: url(<%= asset_path('pattern21.jpg') %>);
+            color: white;
+            .profile-pic-container {
+                background-color: transparent;
+            }
+
+            .content, .message, .name, .challenge {
+                color: white;
+            }
+        }
     }
 }
 
