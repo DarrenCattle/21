@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
     if self.avatar == nil
       gravatar_url
     else
-      avatar.url
+      avatar.url(:thumb)
     end
   end
 
