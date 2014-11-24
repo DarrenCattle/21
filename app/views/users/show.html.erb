@@ -1,9 +1,7 @@
 <section id="profile" class="cover">
 	<div class="container">
 
-		<h1><%= image_tag @user.profile_pic, class: "profile-pic img-circle" %><%= @user.name %></h1>
-		<%= link_to "Change Picture", "http://gravatar.com/emails", target: "_blank" %>
-		
+		<h1><%= image_tag @user.profile_pic, class: "profile-pic img-circle" %><%= @user.name %></h1>		
 
 		<p class="challenge-info-title">Current Challenge:</p>
 		<% if @user.current_challenge.blank? %>
