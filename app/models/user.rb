@@ -49,6 +49,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def profile_pic
+    if self.avatar == nil
+      gravatar_url
+    else
+      avatar.url
+    end
+  end
+
   def like!(activity)
     Like.find_or_create_by!(user_id: self.id, activity_id: activity.id)
   end
