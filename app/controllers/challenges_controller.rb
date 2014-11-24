@@ -55,9 +55,12 @@ class ChallengesController < ApplicationController
 	def update_days
 		@challenge = current_user.challenges.last	
 		if Rails.env.development? || !@challenge.entered? 
-			if @challenge.update(day: @challenge.day + 1, entered: true) 
-				@challenge.create_activity :update_days, owner: current_user, challenge_day: @challenge.day, 
-													 					message: params[:message]
+			if @challenge.update(day: @challenge.day + 1, entered: true)
+				if @challenge.day == 21
+					@challenge.create_activity :reached_day_21, owner: current_user, challenge_day: @challenge.day, message: params[:message]
+				else
+					@challenge.create_activity :update_days, owner: current_user, challenge_day: @challenge.day, message: params[:message]
+				end
 			end
 		end												 
 	end
@@ -66,8 +69,7 @@ class ChallengesController < ApplicationController
 		@challenge = current_user.challenges.last
 		if Rails.env.development? || !@challenge.entered? 
 			if @challenge.update(day: 0, entered: true)
-				@challenge.create_activity :reset_days, owner: current_user, challenge_day: 0, challenge_day: @challenge.day, 
-													 					message: params[:message]
+				@challenge.create_activity :reset_days, owner: current_user, challenge_day: @challenge.day, message: params[:message]
 			end
 		end
 	end
