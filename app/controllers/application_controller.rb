@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
 
 	protected
 		def configure_permitted_parameters
-		  devise_parameter_sanitizer.for(:sign_up) << [:name, :username]
-		  devise_parameter_sanitizer.for(:account_update) << [:name, :unsuscribe_from_reminder_email, :europe, :username]
+		  devise_parameter_sanitizer.for(:sign_up) << [:name, :username, :avatar]
+		  devise_parameter_sanitizer.for(:account_update) << [:name, :unsuscribe_from_reminder_email, :europe, :username, :avatar]
 		end
 	
 	# end to add custom fields to devise

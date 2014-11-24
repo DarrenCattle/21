@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   gravtastic default: "http://i1287.photobucket.com/albums/a627/alejoriveralara/balloon_purple_zps26f69545.png",
              size: 125
 
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "http://i1287.photobucket.com/albums/a627/alejoriveralara/balloon_purple_zps26f69545.png"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
   
 
 

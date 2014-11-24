@@ -13,6 +13,9 @@ gem 'simple_form'
 # fonts
 gem 'font-awesome-sass'
 
+# for image uploads
+gem "paperclip", "~> 4.2"
+
 # CMS
 # gem 'casein'
 
