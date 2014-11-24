@@ -16,6 +16,11 @@ gem 'font-awesome-sass'
 # for image uploads
 gem "paperclip", "~> 4.2"
 
+# for Amazon S3 storage
+gem 'aws-sdk', '~> 1.36.1'
+gem 'fog'
+
+
 # CMS
 # gem 'casein'
 
