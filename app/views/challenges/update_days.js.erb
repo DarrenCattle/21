@@ -8,7 +8,7 @@
 <% elsif @challenge.day == 21 %>
 	// TODO(Max): change to something celebration etc.
 	$("#activity-list").prepend('<%= j render_activity Activity.last %>'); // TODO(Max): change this method to return the last activity FOR THE CURRENT USER
-	$("#sidebar-challenge").html('<p>You have reached Day 21. Congratulations on keeping your word. You have proved character, determination, and true grit. Check your email for a small, but meaningful, surprise!');
+	$("#sidebar-challenge").html('<p class="challenge-info challenge-info-reason">You have reached Day 21. Congratulations on keeping your word. You have proved character, determination, and true grit. Check your email for a small, but meaningful, surprise!</p>');
 	// Display new challenge form
 	$("#sidebar-challenge").append('<%= j render "layouts/new_challenge", challenge: Challenge.new %>');
 <% end %>
