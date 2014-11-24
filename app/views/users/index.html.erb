@@ -4,7 +4,7 @@
 			<h1>Everyone</h1>
 			<% @users.each do |user| %>
 				<div class="person">
-					<%= link_to (image_tag user.gravatar_url, class: "img-circle"), user_path(user) %>
+					<%= link_to (image_tag user.profile_pic, class: "img-circle"), user_path(user) %>
 					<%= link_to user.name, user_path(user), class: "name" %>
 				</div>
 			<% end %>

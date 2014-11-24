@@ -1,7 +1,7 @@
 <% if activity.likes.count > 0 %>
 		<ul class="likes">
 			<% activity.likes.each do |like| %>
-				<li class="like" data-toggle="tooltip" title='<%= like.user.name %>'><%= image_tag like.user.gravatar_url, class: "img-circle" %></li>
+				<li class="like" data-toggle="tooltip" title='<%= like.user.name %>'><%= image_tag like.user.profile_pic, class: "img-circle" %></li>
 			<% end %>
 			<% if activity.likes.count == 1 %>
 				likes this.

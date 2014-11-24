@@ -1,7 +1,7 @@
 <section id="profile" class="cover">
 	<div class="container">
 
-		<h1><%= image_tag @user.gravatar_url, class: "profile-pic img-circle" %><%= @user.name %></h1>
+		<h1><%= image_tag @user.profile_pic, class: "profile-pic img-circle" %><%= @user.name %></h1>
 		<%= link_to "Change Picture", "http://gravatar.com/emails", target: "_blank" %>
 		
 
