@@ -36,14 +36,14 @@ jQuery(function($) {
 	$("#link-complete").click(function(e) {
     	e.preventDefault();
     	$(this).next().remove();
-    	$(this).replaceWith('<form accept-charset="UTF-8" action="/challenges/update_days" data-remote="true" method="post" class="form-inline"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div> <input id="message" name="message" type="text" value="" placeholder="Enter your message here..." class="form-control"> <input class="button button-primary button-form" id="button-complete" name="commit" type="submit" value="Send"><br> </form>');
+    	$(this).replaceWith('<form accept-charset="UTF-8" action="/challenges/update_days" data-remote="true" method="post" class="form-activity-message"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div> <textarea id="message" name="message" type="text" value="" placeholder="Enter your message here..." class="form-control"></textarea> <input class="button button-primary button-form" id="button-complete" name="commit" type="submit" value="Send"><br> </form>');
 	});
 
 // add message when click FAIL
 	$("#link-fail").click(function(e) {
     	e.preventDefault();
     	$(this).prev().remove();
-    	$(this).replaceWith('<form accept-charset="UTF-8" action="/challenges/reset_days" data-remote="true" method="post" class="form-inline"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div> <input id="message" name="message" type="text" value="" placeholder="Enter your message here..." class="form-control"> <input class="button button-primary button-form" id="button-fail" name="commit" type="submit" value="Send"><br> </form>');
+    	$(this).replaceWith('<form accept-charset="UTF-8" action="/challenges/reset_days" data-remote="true" method="post" class="form-activity-message"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div> <textarea id="message" name="message" type="text" value="" placeholder="Enter your message here..." class="form-control"></textarea> <input class="button button-primary button-form" id="button-fail" name="commit" type="submit" value="Send"><br> </form>');
 	});
 });
 
