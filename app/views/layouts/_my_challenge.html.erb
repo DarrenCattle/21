@@ -9,7 +9,7 @@
 	<div class="sidebar-content">
 		<div id="sidebar-challenge">
 			<% if @current_challenge.nil? %>
-				<%= render 'layouts/changed_your_mind' %>
+				<%= render 'layouts/new_challenge', challenge: @challenge %>
 			<% else %>
 				<span id="day"><%= @current_challenge.day %></span>
 				<div class="complete-or-fail">
