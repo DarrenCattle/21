@@ -1,4 +1,4 @@
-var url = "https://hooks.slack.com/services/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";
+var url = "";
 var method = "POST";
 var postData = '{"channel": "#random", "username": "21daybot", "text": "Congrats to Darren for writing'+Math.random()*100+'lines of code today!", "icon_emoji": ":ballot_box_with_check: "}';
 var async = true;
